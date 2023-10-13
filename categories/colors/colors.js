@@ -15,3 +15,8 @@ document.querySelector('.section-container').addEventListener('click', function 
         audio.play();
     }
 });
+
+document.querySelector('.categories-practice').addEventListener('click', function (event) {
+    const arrForSessionStorage = shuffleArray(animals);
+    sessionStorage.setItem("colors", JSON.stringify(arrForSessionStorage));
+});

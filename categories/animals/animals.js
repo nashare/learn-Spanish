@@ -1,4 +1,4 @@
-import { generateSections } from '../categories.js';
+import { generateSections, shuffleArray } from '../categories.js';
 
 const animals = ["caballo", "cerdo", "conejo", 
                 "gato", "oso", "perro", "pez", "pollo", "ratón", "vaca"];
@@ -13,4 +13,9 @@ document.querySelector('.section-container').addEventListener('click', function 
         let audio = document.getElementById(event.target.id + '_audio');
         audio.play();
     }
+});
+
+document.querySelector('.categories-practice').addEventListener('click', function (event) {
+    const arrForSessionStorage = shuffleArray(animals);
+    sessionStorage.setItem("animals", JSON.stringify(arrForSessionStorage));
 });
