@@ -140,3 +140,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.hidden-radio {
+    display: none;
+}
+
+.image-label img {
+    transition: box-shadow 0.3s;
+}
+
+.hidden-radio:checked+img {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}

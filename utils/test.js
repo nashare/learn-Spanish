@@ -18,11 +18,23 @@ function wordAndImages(categoryName, word, arr) {
             <section class="test-container">
                 <p class="test-word">${word}</p>
                 <div class="test-guesses">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[0]}/${allColorsImgsShuffled[0]}.jpg">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[1]}/${allColorsImgsShuffled[1]}.jpg">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[2]}/${allColorsImgsShuffled[2]}.jpg">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[3]}/${allColorsImgsShuffled[3]}.jpg">
-                </div>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[0]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[0]}/${allColorsImgsShuffled[0]}.jpg">
+                    </label>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[1]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[1]}/${allColorsImgsShuffled[1]}.jpg">
+                    </label>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[2]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[2]}/${allColorsImgsShuffled[2]}.jpg">
+                    </label>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[3]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[3]}/${allColorsImgsShuffled[3]}.jpg">
+                    </label>
+                </div>              
             </section>`;
     return sectionsHTML;
 }
@@ -38,11 +50,23 @@ function soundAndImages(categoryName, word, arr) {
                 </audio>
                 <button id="${word}">Play</button>
                 <div class="test-guesses">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[0]}/${allColorsImgsShuffled[0]}.jpg">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[1]}/${allColorsImgsShuffled[1]}.jpg">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[2]}/${allColorsImgsShuffled[2]}.jpg">
-                    <img src="../../../content/${categoryName}/${allColorsImgsShuffled[3]}/${allColorsImgsShuffled[3]}.jpg">
-                </div>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[0]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[0]}/${allColorsImgsShuffled[0]}.jpg">
+                    </label>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[1]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[1]}/${allColorsImgsShuffled[1]}.jpg">
+                    </label>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[2]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[2]}/${allColorsImgsShuffled[2]}.jpg">
+                    </label>
+                    <label class="image-label">
+                        <input type="radio" name="imageChoice" class="hidden-radio" value="${allColorsImgsShuffled[3]}">
+                        <img src="../../../content/${categoryName}/${allColorsImgsShuffled[3]}/${allColorsImgsShuffled[3]}.jpg">
+                    </label>
+                </div>    
             </section>`;
     return sectionsHTML;
 }
@@ -52,15 +76,27 @@ function imageAndTexts(categoryName, word, arr) {
     allWords.push(word);
     const allColorsImgsShuffled = shuffleArray(allWords);
     const sectionsHTML = `
-            <section class="test-container">
-                 <img src="../../../content/${categoryName}/${word}/${word}.jpg">
-                <div class="test-guesses">
-                    <p>${allColorsImgsShuffled[0]}</p>
-                    <p>${allColorsImgsShuffled[1]}</p>
-                    <p>${allColorsImgsShuffled[2]}</p>
-                    <p>${allColorsImgsShuffled[3]}</p>
-                </div>
-            </section>`;
+        <section class="test-container">
+            <img src="../../../content/${categoryName}/${word}/${word}.jpg">
+            <div class="test-guesses">
+                <label>
+                    <input type="radio" name="guess" value="${allColorsImgsShuffled[0]}">
+                    ${allColorsImgsShuffled[0]}
+                </label>
+                <label>
+                    <input type="radio" name="guess" value="${allColorsImgsShuffled[1]}">
+                    ${allColorsImgsShuffled[1]}
+                </label>
+                <label>
+                    <input type="radio" name="guess" value="${allColorsImgsShuffled[2]}">
+                    ${allColorsImgsShuffled[2]}
+                </label>
+                <label>
+                    <input type="radio" name="guess" value="${allColorsImgsShuffled[3]}">
+                    ${allColorsImgsShuffled[3]}
+                </label>
+            </div>
+        </section>`;
     return sectionsHTML;
 }
 
@@ -68,7 +104,7 @@ function imageAndInput(categoryName, word) {
     const sectionsHTML = `
             <section class="test-container">
                 <img src="../../../content/${categoryName}/${word}/${word}.jpg">
-                <input>
+                <input type="text">
             </section>`;
     return sectionsHTML;
 }
