@@ -24,10 +24,11 @@ img {
 }
 
 .categories-container {
-    margin: 8vmin;
+    margin: 8vmin 8vmin 0 8vmin;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2vmin;
+    gap: 3vmin;
+    padding: 0;
 }
 
 main {
@@ -116,4 +117,9 @@ body {
 .word-text {
     font-weight: bold;
     font-size: 4vmin;
+}
+
+.authentication-medium {
+    width: 30%;
+    display: flex;
 }
