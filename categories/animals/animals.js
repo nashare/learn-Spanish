@@ -1,4 +1,4 @@
-import { generateSections, shuffleArray } from '../categories.js';
+import { generateSections, shuffleArray } from '../../utils/categories.js';
 
 const animals = ["caballo", "cerdo", "conejo", 
                 "gato", "oso", "perro", "pez", "pollo", "ratón", "vaca"];

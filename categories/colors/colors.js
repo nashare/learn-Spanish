@@ -1,4 +1,4 @@
-import { generateSections } from '../categories.js';
+import { generateSections, shuffleArray } from '../../utils/categories.js';
 
 const colors = ["negro", "verde", "azul", 
     "rojo", "amarillo", "blanco", "rosa", "naranja", "púrpura", "marrón"];
@@ -17,6 +17,6 @@ document.querySelector('.section-container').addEventListener('click', function 
 });
 
 document.querySelector('.categories-practice').addEventListener('click', function (event) {
-    const arrForSessionStorage = shuffleArray(animals);
+    const arrForSessionStorage = shuffleArray(colors);
     sessionStorage.setItem("colors", JSON.stringify(arrForSessionStorage));
 });

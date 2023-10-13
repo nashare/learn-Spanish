@@ -1,10 +1,10 @@
 import { createGuessesArr, createTestHTML } from "../../../utils/test.js"
 
 const animalsForTest = JSON.parse(sessionStorage.animals)
-const arrayForGuesses = createGuessesArr(animalsForTest, 0);
+const arrayForGuesses = createGuessesArr(animalsForTest, 8);
 
 document.addEventListener('DOMContentLoaded', function () {
-    const testHTML = createTestHTML("animals", animalsForTest[0], arrayForGuesses);
+    const testHTML = createTestHTML("animals", animalsForTest[8], arrayForGuesses);
     document.querySelector('.test').innerHTML = testHTML;
 
     document.querySelector('.test-container').addEventListener('click', function (event) {

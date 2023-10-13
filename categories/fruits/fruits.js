@@ -1,4 +1,4 @@
-import { generateSections } from '../categories.js';
+import { generateSections, shuffleArray } from '../../utils/categories.js';
 
 const fruits = ["manzana", "albaricoque", "banana",
     "cereza", "uva", "fresa", "naranja", "limon", "durazno", "pera"];
@@ -17,6 +17,6 @@ document.querySelector('.section-container').addEventListener('click', function 
 });
 
 document.querySelector('.categories-practice').addEventListener('click', function (event) {
-    const arrForSessionStorage = shuffleArray(animals);
+    const arrForSessionStorage = shuffleArray(fruits);
     sessionStorage.setItem("fruits", JSON.stringify(arrForSessionStorage));
 });

@@ -1,10 +1,10 @@
-import { shuffleArray } from "./categories";
+import { shuffleArray } from "./categories.js";
 
 function excludeByIndex(arr, index) {
     return arr.slice(0, index).concat(arr.slice(index + 1));
 }
 
-export function createGuessesArr(arr, ind) {
+function createGuessesArr(arr, ind) {
     const arrayWithoutTestWord = excludeByIndex(arr, ind);
     return shuffleArray(arrayWithoutTestWord).slice(0, 3);
 
@@ -77,24 +77,28 @@ function randomBetweenOneAndFour() {
     return Math.floor(Math.random() * 4) + 1;
 }
 
-export function createTestHTML(category, word, arrayForGuesses) {
-    console.log("here", category, word, arrayForGuesses);
+function createTestHTML(category, word, arrayForGuesses) {
     const testType = randomBetweenOneAndFour();
     switch (testType) {
         case 1:
-            wordAndImages(category, word, arrayForGuesses);
+            return wordAndImages(category, word, arrayForGuesses);
             break;
         case 2:
-            soundAndImages(category, word, arrayForGuesses);
+            return soundAndImages(category, word, arrayForGuesses);
             break;
         case 3:
-            imageAndTexts(category, word, arrayForGuesses);
+            return imageAndTexts(category, word, arrayForGuesses);
             break;
         case 4:
-            imageAndInput(category, word);
+            return imageAndInput(category, word);
             break;
         default:
             console.log("Invalid number!");
             break;
     }
 }
+
+export {
+    createGuessesArr,
+    createTestHTML
+};

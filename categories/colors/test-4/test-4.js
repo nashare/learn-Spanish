@@ -1,10 +1,10 @@
 import { createGuessesArr, createTestHTML } from "../../../utils/test.js"
 
-const animalsForTest = JSON.parse(sessionStorage.animals)
-const arrayForGuesses = createGuessesArr(animalsForTest, 0);
+const colorsForTest = JSON.parse(sessionStorage.colors)
+const arrayForGuesses = createGuessesArr(colorsForTest, 3);
 
 document.addEventListener('DOMContentLoaded', function () {
-    const testHTML = createTestHTML("animals", animalsForTest[0], arrayForGuesses);
+    const testHTML = createTestHTML("colors", colorsForTest[3], arrayForGuesses);
     document.querySelector('.test').innerHTML = testHTML;
 
     document.querySelector('.test-container').addEventListener('click', function (event) {
@@ -14,4 +14,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
