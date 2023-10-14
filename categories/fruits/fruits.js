@@ -1,8 +1,5 @@
 import { generateSections, shuffleArray } from '../../utils/categories.js';
-
-const fruits = ["manzana", "albaricoque", "banana",
-    "cereza", "uva", "fresa", "naranja", "limon", "durazno", "pera"];
-
+import { fruits } from '../../constants/words.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     const sectionsHTML = generateSections("fruits", fruits);

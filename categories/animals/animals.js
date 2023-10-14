@@ -1,7 +1,5 @@
 import { generateSections, shuffleArray } from '../../utils/categories.js';
-
-const animals = ["caballo", "cerdo", "conejo", 
-                "gato", "oso", "perro", "pez", "pollo", "ratón", "vaca"];
+import { animals } from '../../constants/words.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     const sectionsHTML = generateSections("animals", animals);
@@ -17,5 +15,7 @@ document.querySelector('.section-container').addEventListener('click', function 
 
 document.querySelector('.categories-practice').addEventListener('click', function (event) {
     const arrForSessionStorage = shuffleArray(animals);
-    sessionStorage.setItem("animals", JSON.stringify(arrForSessionStorage));
+    sessionStorage.setItem('animals', JSON.stringify(arrForSessionStorage));
+    sessionStorage.setItem('animalTestNum', '1');
+    sessionStorage.setItem('animalTestWrongAnsw', JSON.stringify([]));
 });

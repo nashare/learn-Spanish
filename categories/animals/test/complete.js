@@ -1,8 +1,8 @@
 import { generateSections } from "../../../utils/categories.js";
 import { shuffleArray } from "../../../utils/categories.js";
-import { fruits } from "../../../constants/words.js";
+import { animals } from "../../../constants/words.js";
 
-let wrongAnswersArr = JSON.parse(sessionStorage.getItem('fruitTestWrongAnsw'))
+let wrongAnswersArr = JSON.parse(sessionStorage.getItem('animalTestWrongAnsw'))
 
 document.addEventListener('DOMContentLoaded', function () { 
     const completeEl = document.querySelector('.test-complete');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </a>`
     } else {
         const wrongAnswNum = 10 - wrongAnswersArr.length;
-        const reviewSection = generateSections("fruits", wrongAnswersArr);
+        const reviewSection = generateSections("animals", wrongAnswersArr);
         completeHTML = `<p>Your result is ${wrongAnswNum}/10</p>
                             <p>Please review these words:</p>
                             ${reviewSection}
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const practiceButton = document.querySelector(".complete-button-practice");
     if (practiceButton) {
         practiceButton.addEventListener('click', function() {
-            const arrForSessionStorage = shuffleArray(fruits);
-            sessionStorage.setItem('fruits', JSON.stringify(arrForSessionStorage));
-            sessionStorage.setItem('fruitTestNum', '1');
-            sessionStorage.setItem('fruitTestWrongAnsw', JSON.stringify([]));
+            const arrForSessionStorage = shuffleArray(animals);
+            sessionStorage.setItem('animals', JSON.stringify(arrForSessionStorage));
+            sessionStorage.setItem('animalTestNum', '1');
+            sessionStorage.setItem('animalTestWrongAnsw', JSON.stringify([]));
         })
     }
 });
