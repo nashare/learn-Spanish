@@ -15,8 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         const wrongAnswNum = 10 - wrongAnswersArr.length;
         const reviewSection = generateSections("animals", wrongAnswersArr);
+        let wrongNumbSentPart;
+        if (wrongAnswNum.length === 1) {
+            wrongNumbSentPart = "the word"
+        } else {
+            wrongNumbSentPart = "these words"
+        }
         completeHTML = `<p>Your result is ${wrongAnswNum}/10</p>
-                            <p>Please review these words:</p>
+                            <p>Please review ${wrongNumbSentPart}:</p>
                             ${reviewSection}
                             <a href="../test-1/test-1.html">
                                 <button class="complete-button-practice">Practice</button>

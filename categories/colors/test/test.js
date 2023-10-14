@@ -1,4 +1,4 @@
-import { createGuessesArr, createTestHTML } from "../../../utils/test.js"
+import { createGuessesArr, createTestHTML } from "../../../utils/testGeneration.js"
 
 const colorsForTest = JSON.parse(sessionStorage.colors);
 const testNum = parseInt(sessionStorage.colorTestNum);
@@ -7,9 +7,9 @@ let currentlySelected = null;
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const testHTML = createTestHTML("colors", colorsForTest[testNum-1], arrayForGuesses);
+    let testHTML = createTestHTML("colors", colorsForTest[testNum-1], arrayForGuesses);
     sessionStorage.setItem('colorsTestHTML', testHTML);
-
+    testHTML = `<p class="test-number">${testNum} / 10</p>` + testHTML;
     document.querySelector('.test').innerHTML = testHTML;
 
     const audioElement = document.getElementById(colorsForTest[testNum-1] + '_audio');

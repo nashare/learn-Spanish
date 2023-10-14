@@ -1,13 +1,14 @@
+import { normalizeString } from "../../../utils/diacriticRemove.js"
+
 const userAnswer = sessionStorage.getItem('testUserValue');
 let testNum = parseInt(sessionStorage.fruitTestNum);
 const fruitsForTest = JSON.parse(sessionStorage.fruits);
-console.log(userAnswer, fruitsForTest[testNum-1]);
 
 document.addEventListener('DOMContentLoaded', function () {
     let storedHtmlContent = sessionStorage.getItem('fruitsTestHTML');
     if (storedHtmlContent) {
         const resultDiv = document.querySelector('.test-result');
-        if (userAnswer == fruitsForTest[testNum-1]) {
+        if (normalizeString(userAnswer) === normalizeString(fruitsForTest[testNum-1])) {
             storedHtmlContent += "<p>Correct</p>";
         } else {
             let wrongAnswersArr = JSON.parse(sessionStorage.getItem('fruitTestWrongAnsw')) || [];
