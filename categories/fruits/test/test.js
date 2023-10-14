@@ -1,19 +1,19 @@
-import { createGuessesArr, createTestHTML } from "../../../utils/testGeneration.js"
+import { createGuessesArr, createTestHTML } from "../../../utils/testCreate.js"
 
-const fruitsForTest = JSON.parse(sessionStorage.fruits);
+const wordsForTest = JSON.parse(sessionStorage.fruits);
 const testNum = parseInt(sessionStorage.fruitTestNum);
-const arrayForGuesses = createGuessesArr(fruitsForTest, testNum-1);
+const arrayForGuesses = createGuessesArr(wordsForTest, testNum-1);
 let currentlySelected = null;
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let testHTML = createTestHTML("fruits", fruitsForTest[testNum-1], arrayForGuesses);
+    let testHTML = createTestHTML("fruits", wordsForTest[testNum-1], arrayForGuesses);
     sessionStorage.setItem('fruitsTestHTML', testHTML);
     testHTML = `<p class="test-number">${testNum} / 10</p>` + testHTML;
     document.querySelector('.test').innerHTML += testHTML;
 
-    const audioElement = document.getElementById(fruitsForTest[testNum-1] + '_audio');
-    const playButton = document.getElementById(fruitsForTest[testNum-1]);
+    const audioElement = document.getElementById(wordsForTest[testNum-1] + '_audio');
+    const playButton = document.getElementById(wordsForTest[testNum-1]);
 
     if (playButton) {
         playButton.addEventListener('click', function () {

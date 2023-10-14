@@ -1,4 +1,4 @@
-import { createGuessesArr, createTestHTML } from "../../../utils/testGeneration.js"
+import { createGuessesArr, createTestHTML } from "../../../utils/testCreate.js"
 
 const colorsForTest = JSON.parse(sessionStorage.colors);
 const testNum = parseInt(sessionStorage.colorTestNum);

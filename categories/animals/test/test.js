@@ -1,4 +1,4 @@
-import { createGuessesArr, createTestHTML } from "../../../utils/testGeneration.js"
+import { createGuessesArr, createTestHTML } from "../../../utils/testCreate.js"
 
 const animalsForTest = JSON.parse(sessionStorage.animals);
 const testNum = parseInt(sessionStorage.animalTestNum);
