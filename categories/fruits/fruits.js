@@ -20,3 +20,7 @@ document.querySelector('.categories-practice').addEventListener('click', functio
     const arrForSessionStorage = shuffleArray(fruits);
     sessionStorage.setItem("fruits", JSON.stringify(arrForSessionStorage));
 });
+
+document.querySelector('.categories-practice').addEventListener('click', function () {
+    sessionStorage.setItem('fruitTestNum', '1');
+});
