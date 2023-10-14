@@ -18,9 +18,7 @@ document.querySelector('.section-container').addEventListener('click', function 
 
 document.querySelector('.categories-practice').addEventListener('click', function (event) {
     const arrForSessionStorage = shuffleArray(fruits);
-    sessionStorage.setItem("fruits", JSON.stringify(arrForSessionStorage));
-});
-
-document.querySelector('.categories-practice').addEventListener('click', function () {
+    sessionStorage.setItem('fruits', JSON.stringify(arrForSessionStorage));
     sessionStorage.setItem('fruitTestNum', '1');
+    sessionStorage.setItem('fruitTestWrongAnsw', JSON.stringify([]));
 });

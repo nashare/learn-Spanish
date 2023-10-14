@@ -7,13 +7,13 @@ let currentlySelected = null;
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const testHTML = createTestHTML("fruits", fruitsForTest[testNum - 1], arrayForGuesses);
+    const testHTML = createTestHTML("fruits", fruitsForTest[testNum-1], arrayForGuesses);
     sessionStorage.setItem('fruitsTestHTML', testHTML);
 
     document.querySelector('.test').innerHTML = testHTML;
 
-    const audioElement = document.getElementById(fruitsForTest[testNum - 1] + '_audio');
-    const playButton = document.getElementById(fruitsForTest[testNum - 1]);
+    const audioElement = document.getElementById(fruitsForTest[testNum-1] + '_audio');
+    const playButton = document.getElementById(fruitsForTest[testNum-1]);
 
     if (playButton) {
         playButton.addEventListener('click', function () {
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const radios = document.querySelectorAll('input[type="radio"]');
-    const checkButton = document.querySelector('.test-check');
 
     radios.forEach(radio => {
         radio.addEventListener('change', function () {
@@ -50,7 +49,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 checkButton.disabled = true;
             }
         });
-    }
+    };
 
+    const checkButton = document.querySelector('.test-check');
+
+    checkButton.addEventListener('click', function () {
+        const selectedRadio = document.querySelector('input[type="radio"]:checked');
+        if (selectedRadio) {
+            sessionStorage.setItem('testUserValue', String(selectedRadio.value));
+        }
+        const inputField = document.querySelector('.test-container input[type="text"]');
+        if (inputField) {
+            sessionStorage.setItem('testUserValue', String(inputField.value.trim()));
+        }
+
+    });
 });
 
