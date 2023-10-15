@@ -1,4 +1,11 @@
-export function callbackForTest(testNum, testHTML, wordsForTest) {
+import { createGuessesArr, createTestHTML } from "./testCreate.js"
+
+export function callbackForTest(category) {
+    const wordsForTest = JSON.parse(sessionStorage.getItem(category));
+    const testNum = parseInt(sessionStorage.getItem(`${category}TestNum`));
+    const arrayForGuesses = createGuessesArr(wordsForTest, testNum - 1);
+    let testHTML = createTestHTML(category, wordsForTest[testNum - 1], arrayForGuesses);
+
     let currentlySelected = null;
     testHTML = `<p class="test-number">${testNum} / 10</p>` + testHTML;
     document.querySelector('.test').innerHTML += testHTML;
@@ -47,11 +54,11 @@ export function callbackForTest(testNum, testHTML, wordsForTest) {
     checkButton.addEventListener('click', function () {
         const selectedRadio = document.querySelector('input[type="radio"]:checked');
         if (selectedRadio) {
-            sessionStorage.setItem('testUserValue', String(selectedRadio.value));
+            sessionStorage.setItem(`${category}TestUserValue`, String(selectedRadio.value));
         }
         const inputField = document.querySelector('.test-container input[type="text"]');
         if (inputField) {
-            sessionStorage.setItem('testUserValue', String(inputField.value.trim()));
+            sessionStorage.setItem(`${category}TestUserValue`, String(inputField.value.trim()));
         }
 
     });
