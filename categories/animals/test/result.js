@@ -1,7 +1,7 @@
 import { normalizeString } from "../../../utils/diacriticRemove.js"
 
 const userAnswer = sessionStorage.getItem('testUserValue');
-let testNum = parseInt(sessionStorage.animalTestNum);
+let testNum = parseInt(sessionStorage.animalsTestNum);
 const animalsForTest = JSON.parse(sessionStorage.animals);
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (normalizeString(userAnswer) === normalizeString(animalsForTest[testNum-1])) {
             storedHtmlContent += "<p>Correct</p>";
         } else {
-            let wrongAnswersArr = JSON.parse(sessionStorage.getItem('animalTestWrongAnsw')) || [];
+            let wrongAnswersArr = JSON.parse(sessionStorage.getItem('animalsTestWrongAnsw')) || [];
             wrongAnswersArr.push(animalsForTest[testNum - 1]);
-            sessionStorage.setItem('animalTestWrongAnsw', JSON.stringify(wrongAnswersArr));
+            sessionStorage.setItem('animalsTestWrongAnsw', JSON.stringify(wrongAnswersArr));
             storedHtmlContent += "<p>Wrong</p>";
         }
         resultDiv.innerHTML = storedHtmlContent;
@@ -25,7 +25,7 @@ document.querySelector('.test-result-button').addEventListener('click', function
     if (testNum === 11) {
         window.location.href = `/categories/animals/test/complete.html`;
     } else {
-        sessionStorage.setItem('animalTestNum', String(testNum));
+        sessionStorage.setItem('animalsTestNum', String(testNum));
         window.location.href = `/categories/animals/test-${testNum}/test-${testNum}.html`;
     }
 });

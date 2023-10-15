@@ -1,7 +1,7 @@
 import { normalizeString } from "../../../utils/diacriticRemove.js"
 
 const userAnswer = sessionStorage.getItem('testUserValue');
-let testNum = parseInt(sessionStorage.fruitTestNum);
+let testNum = parseInt(sessionStorage.fruitsTestNum);
 const fruitsForTest = JSON.parse(sessionStorage.fruits);
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 correctRadioInput.classList.add('result-p-green');
             }
         } else {
-            let wrongAnswersArr = JSON.parse(sessionStorage.getItem('fruitTestWrongAnsw')) || [];
+            let wrongAnswersArr = JSON.parse(sessionStorage.getItem('fruitsTestWrongAnsw')) || [];
             wrongAnswersArr.push(fruitsForTest[testNum - 1]);
-            sessionStorage.setItem('fruitTestWrongAnsw', JSON.stringify(wrongAnswersArr));
+            sessionStorage.setItem('fruitsTestWrongAnsw', JSON.stringify(wrongAnswersArr));
             storedHtmlContent = "<p>Wrong answer.</p>" + storedHtmlContent;
             resultDiv.innerHTML = storedHtmlContent;
             const testContainer = document.querySelector('.test-container');
@@ -54,7 +54,7 @@ document.querySelector('.test-result-button').addEventListener('click', function
     if (testNum === 11) {
         window.location.href = `/categories/fruits/test/complete.html`;
     } else {
-        sessionStorage.setItem('fruitTestNum', String(testNum));
+        sessionStorage.setItem('fruitsTestNum', String(testNum));
         window.location.href = `/categories/fruits/test-${testNum}/test-${testNum}.html`;
     }
 });

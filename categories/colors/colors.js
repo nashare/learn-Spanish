@@ -16,6 +16,6 @@ document.querySelector('.section-container').addEventListener('click', function 
 document.querySelector('.categories-practice').addEventListener('click', function (event) {
     const arrForSessionStorage = shuffleArray(colors);
     sessionStorage.setItem('colors', JSON.stringify(arrForSessionStorage));
-    sessionStorage.setItem('colorTestNum', '1');
-    sessionStorage.setItem('colorTestWrongAnsw', JSON.stringify([]));
+    sessionStorage.setItem('colorsTestNum', '1');
+    sessionStorage.setItem('colorsTestWrongAnsw', JSON.stringify([]));
 });
