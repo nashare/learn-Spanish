@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const arrForSessionStorage = shuffleArray(fruits);
             sessionStorage.setItem('fruits', JSON.stringify(arrForSessionStorage));
             sessionStorage.setItem('fruitTestNum', '1');
+            sessionStorage.setItem('testUserValue', '');
             sessionStorage.setItem('fruitTestWrongAnsw', JSON.stringify([]));
         })
     }

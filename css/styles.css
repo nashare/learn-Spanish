@@ -15,7 +15,7 @@ img {
     width: 100%;
     height: auto;
     border-radius: 3vmin;
-    border: 0.4vmin solid #4dccdd;
+    border: 0.2vmin solid grey;
 }
 
 .word-container {
@@ -151,4 +151,21 @@ body {
 
 .hidden-radio:checked+img {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.result-p-red {
+    text-decoration: line-through;
+    color: red;
+}
+
+.result-p-green {
+    color: green;
+}
+
+.result-img-green {
+    border: 0.6vmin green solid;
+}
+
+.result-img-red {
+    border: 0.6vmin red solid;
 }
