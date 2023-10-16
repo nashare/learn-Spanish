@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "json-server",
+      "password": "typicode"
+    },
+    {
+      "email": "tatiana.lavr@gmail.com",
+      "password": "qotdas-xYbkix-jamni1",
+      "id": 2
+    }
+  ]
+}

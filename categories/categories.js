@@ -1,26 +1,16 @@
-export function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+const loggedIn = sessionStorage.getItem('loggedIn');
+
+if (!loggedIn) {
+    sessionStorage.setItem('loggedIn', 'false');
+    window.location.href = '../logIn.html';
+}
+if (loggedIn === 'false') {
+    window.location.href = '../logIn.html';
 }
 
-export function generateSections(categoryName, arr) {
-    let sectionsHTML = '';
-    let shuffledArr = shuffleArray(arr);
+const logOut = document.getElementById("log-out");
 
-    shuffledArr.forEach(word => {
-        sectionsHTML += `
-            <section class="word-container">
-                <img src="../../content/${categoryName}/${word}/${word}.jpg">
-                <p class="word-text">${word}</p>
-                <audio id="${word}_audio">
-                    <source src="../../content/${categoryName}/${word}/${word}.mp3" type="audio/mp3">
-                </audio>
-                <button id="${word}">Play</button>
-            </section>`;
-    });
-
-    return sectionsHTML;
-}
+logOut.addEventListener('click', function () {
+    sessionStorage.setItem('loggedIn', 'false');
+    window.location.href = '../logIn.html';
+});

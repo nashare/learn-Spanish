@@ -169,3 +169,8 @@ body {
 .result-img-red {
     border: 0.6vmin red solid;
 }
+
+.error-message {
+    color: red;
+    display: none;
+}

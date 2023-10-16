@@ -15,22 +15,33 @@
                 <p class="header-text">LEARN SPANISH</p>
             </a>
             <ul class="header-links">
-                <a href="./signup.html" class="header-link">
-                    <li>Sign Up</li>
-                </a>
-                <a href="./login.html" class="header-link">
-                    <li>Log In</li>
-                </a>
             </ul>
         </nav>
     </header>
     <main>
+        <p>Please log in.</p>
         <p>Don't have an account? <a href="./signUp.html">Sign up</a> now.</p>
+        <form id="loginForm" action="/submit" method="post">
+            <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+                <span class="error-message" id="emailError">Please enter a valid email.</span>
+            </div>
+        
+            <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password" required minlength="8">
+                <span class="error-message" id="passwordError">Incorrect password.</span>
+            </div>
+        
+            <button type="submit">Log In</button>
+            <div id="loginServerError" class="error-message"></div>
+        </form>
     </main>
     <footer>
         <p class="footer-text">© 2023 Tanya. All rights reserved.</p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script type="module" src="./logIn.js" defer></script>
 </body>
 
 </html>
