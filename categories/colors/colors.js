@@ -1,4 +1,4 @@
-import { generateSections, shuffleArray } from '../../utils/categories.js';
+import { generateSections, shuffleArray } from '../../utils/categoryCreate.js';
 import { colors } from '../../constants/words.js';
 
 const loggedIn = sessionStorage.getItem('loggedIn');

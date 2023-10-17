@@ -1,4 +1,4 @@
-import { generateSections, shuffleArray } from "./categories.js";
+import { generateSections, shuffleArray } from "./categoryCreate.js";
 
 async function checkAndUpdateUser(userId, categoryToAdd) {
     try {
@@ -41,7 +41,8 @@ export function callbackForComplete(category) {
                             ${reviewSection}
                             <a href="../test-1/test-1.html">
                                 <button class="complete-button-practice">Practice</button>
-                            </a>`
+                            </a>`;
+        
     }
     completeEl.innerHTML = completeHTML;
     const practiceButton = document.querySelector(".complete-button-practice");

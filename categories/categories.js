@@ -1,12 +1,6 @@
-const loggedIn = sessionStorage.getItem('loggedIn');
+import { loggedInCheck } from "../utils/loggedInCheck.js";
 
-if (!loggedIn) {
-    sessionStorage.setItem('loggedIn', 'false');
-    window.location.href = '../logIn.html';
-}
-if (loggedIn === 'false') {
-    window.location.href = '../logIn.html';
-}
+loggedInCheck();
 
 const logOut = document.getElementById("log-out");
 

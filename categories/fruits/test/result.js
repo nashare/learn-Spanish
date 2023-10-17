@@ -1,14 +1,7 @@
 import { callbackForResult } from "../../../utils/callbackForResult.js";
+import { loggedInCheck } from "../../../utils/loggedInCheck.js";
 
-const loggedIn = sessionStorage.getItem('loggedIn');
-
-if (!loggedIn) {
-    sessionStorage.setItem('loggedIn', 'false');
-    window.location.href = '../../../logIn.html';
-}
-if (loggedIn === 'false') {
-    window.location.href = '../../../logIn.html';
-}
+loggedInCheck();
 
 document.addEventListener('DOMContentLoaded', callbackForResult("fruits"));
 

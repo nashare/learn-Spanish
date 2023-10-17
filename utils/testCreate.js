@@ -1,4 +1,4 @@
-import { shuffleArray } from "./categories.js";
+import { shuffleArray } from "./categoryCreate.js";
 
 function excludeByIndex(arr, index) {
     return arr.slice(0, index).concat(arr.slice(index + 1));
@@ -14,7 +14,7 @@ function wordAndImages(categoryName, word, shuffledGuesses) {
     const sectionHTMLforStorage = `
             <section class="test-container type-1">
                 <p class="test-word">${word}</p>
-                <div class="test-guesses">
+                <div class="test-guesses test-guesses-images">
                     <img id=${shuffledGuesses[0]} src="../../../content/${categoryName}/${shuffledGuesses[0]}/${shuffledGuesses[0]}.jpg">
                     <img id=${shuffledGuesses[1]} src="../../../content/${categoryName}/${shuffledGuesses[1]}/${shuffledGuesses[1]}.jpg">
                     <img id=${shuffledGuesses[2]} src="../../../content/${categoryName}/${shuffledGuesses[2]}/${shuffledGuesses[2]}.jpg">
@@ -25,7 +25,7 @@ function wordAndImages(categoryName, word, shuffledGuesses) {
     const sectionsHTML = `
             <section class="test-container">
                 <p class="test-word">${word}</p>
-                <div class="test-guesses">
+                <div class="test-guesses test-guesses-images">
                     <label class="image-label">
                         <input type="radio" name="imageChoice" class="hidden-radio" value="${shuffledGuesses[0]}">
                         <img src="../../../content/${categoryName}/${shuffledGuesses[0]}/${shuffledGuesses[0]}.jpg">
@@ -54,7 +54,7 @@ function soundAndImages(categoryName, word, shuffledGuesses) {
                     <source src="../../../content/${categoryName}/${word}/${word}.mp3" type="audio/mp3">
                 </audio>
                 <button id="${word}">Play</button>
-                <div class="test-guesses">
+                <div class="test-guesses test-guesses-images">
                     <img id=${shuffledGuesses[0]} src="../../../content/${categoryName}/${shuffledGuesses[0]}/${shuffledGuesses[0]}.jpg">
                     <img id=${shuffledGuesses[1]} src="../../../content/${categoryName}/${shuffledGuesses[1]}/${shuffledGuesses[1]}.jpg">
                     <img id=${shuffledGuesses[2]} src="../../../content/${categoryName}/${shuffledGuesses[2]}/${shuffledGuesses[2]}.jpg">
@@ -68,7 +68,7 @@ function soundAndImages(categoryName, word, shuffledGuesses) {
                     <source src="../../../content/${categoryName}/${word}/${word}.mp3" type="audio/mp3">
                 </audio>
                 <button id="${word}">Play</button>
-                <div class="test-guesses">
+                <div class="test-guesses test-guesses-images">
                     <label class="image-label">
                         <input type="radio" name="imageChoice" class="hidden-radio" value="${shuffledGuesses[0]}">
                         <img src="../../../content/${categoryName}/${shuffledGuesses[0]}/${shuffledGuesses[0]}.jpg">
@@ -95,21 +95,21 @@ function imageAndTexts(categoryName, word, shuffledGuesses) {
         <section class="test-container type-3">
             <img src="../../../content/${categoryName}/${word}/${word}.jpg">
             <div class="test-guesses">
-                <label>
+                <label class="radio-label">
                     <input type="radio" disabled >
-                    <p id="${shuffledGuesses[0]}">${shuffledGuesses[0]}</p>
+                    <p id="${shuffledGuesses[0]}" class="radio-label-p">${shuffledGuesses[0]}</p>
                 </label>
-                <label>
+                <label class="radio-label">
                     <input type="radio" disabled>
-                    <p id="${shuffledGuesses[1]}">${shuffledGuesses[1]}</p>
+                    <p id="${shuffledGuesses[1]}" class="radio-label-p">${shuffledGuesses[1]}</p>
                 </label>
-                <label>
+                <label class="radio-label">
                     <input type="radio" disabled>
-                    <p id="${shuffledGuesses[2]}">${shuffledGuesses[2]}</p>
+                    <p id="${shuffledGuesses[2]}" class="radio-label-p">${shuffledGuesses[2]}</p>
                 </label>
-                <label>
+                <label class="radio-label">
                     <input type="radio" disabled>
-                    <p id="${shuffledGuesses[3]}">${shuffledGuesses[3]}</p>
+                    <p id="${shuffledGuesses[3]}" class="radio-label-p">${shuffledGuesses[3]}</p>
                 </label>
             </div>
         </section>`;
@@ -118,19 +118,19 @@ function imageAndTexts(categoryName, word, shuffledGuesses) {
         <section class="test-container">
             <img src="../../../content/${categoryName}/${word}/${word}.jpg">
             <div class="test-guesses">
-                <label>
+                <label class="radio-label">
                     <input type="radio" name="guess" value="${shuffledGuesses[0]}">
                     ${shuffledGuesses[0]}
                 </label>
-                <label>
+                <label class="radio-label">
                     <input type="radio" name="guess" value="${shuffledGuesses[1]}">
                     ${shuffledGuesses[1]}
                 </label>
-                <label>
+                <label class="radio-label">
                     <input type="radio" name="guess" value="${shuffledGuesses[2]}">
                     ${shuffledGuesses[2]}
                 </label>
-                <label>
+                <label class="radio-label">
                     <input type="radio" name="guess" value="${shuffledGuesses[3]}">
                     ${shuffledGuesses[3]}
                 </label>

@@ -1,5 +1,3 @@
-import { normalizeString } from "./diacriticRemove.js";
-
 export function callbackForResult(category) {
     const userAnswer = sessionStorage.getItem(`${category}TestUserValue`);
     let testNum = parseInt(sessionStorage.getItem(`${category}TestNum`));
@@ -7,6 +5,12 @@ export function callbackForResult(category) {
     let storedTestContent = sessionStorage.getItem(`${category}TestForResult`);
     if (storedTestContent) {
         const testResultDiv = document.querySelector('.test-result');
+        function normalizeString(str) {
+            return str
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase();
+        };
         if (normalizeString(userAnswer) === normalizeString(wordsArrForTest[testNum - 1])) {
             storedTestContent = "<p>Correct!</p>" + storedTestContent;
             testResultDiv.innerHTML = storedTestContent;
@@ -45,7 +49,7 @@ export function callbackForResult(category) {
                 wrongRadioInput.classList.add('result-p-red');
             }
         }
-        const playButton = document.getElementById(wordsArrForTest[testNum - 1]);
+        const playButton = document.querySelector(`button#${wordsArrForTest[testNum - 1]}`);
         if (playButton) {
             const audioElement = document.getElementById(wordsArrForTest[testNum - 1] + '_audio');
             playButton.addEventListener('click', function () {
