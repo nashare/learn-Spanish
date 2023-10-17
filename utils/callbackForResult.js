@@ -12,7 +12,7 @@ export function callbackForResult(category) {
                 .toLowerCase();
         };
         if (normalizeString(userAnswer) === normalizeString(wordsArrForTest[testNum - 1])) {
-            storedTestContent = "<p>Correct!</p>" + storedTestContent;
+            storedTestContent = "<p class='result-p-green'>Correct!</p>" + storedTestContent;
             testResultDiv.innerHTML = storedTestContent;
             const testContainer = document.querySelector('.test-container');
             const testGuesses = document.querySelector('.test-guesses');
@@ -29,7 +29,7 @@ export function callbackForResult(category) {
             let wrongAnswersArr = JSON.parse(sessionStorage.getItem(`${category}TestWrongAnsw`)) || [];
             wrongAnswersArr.push(wordsArrForTest[testNum - 1]);
             sessionStorage.setItem(`${category}TestWrongAnsw`, JSON.stringify(wrongAnswersArr));
-            storedTestContent = "<p>Wrong answer.</p>" + storedTestContent;
+            storedTestContent = "<p class='result-p-wrong'>Oops! That was not correct.</p>" + storedTestContent;
             testResultDiv.innerHTML = storedTestContent;
             const testContainer = document.querySelector('.test-container');
             const testGuesses = document.querySelector('.test-guesses');
