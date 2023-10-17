@@ -42,11 +42,11 @@ main {
 }
 
 header {
-    background-color: #4dccdd;
+    background-color: #ffd450;
 }
 
 footer {
-    background-color: #4dccdd;
+    background-color: #ffd450;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,10 +65,21 @@ body {
 
 .header-text {
     margin: 1vmin;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center; 
+    border-radius: 25px;
 }
 
 .header-home {
     text-decoration: none;
+}
+
+.header-home:hover {
+    text-decoration: underline;
 }
 
 .header-home:visited {
@@ -80,9 +91,14 @@ body {
 }
 
 .header-link {
-    margin: 1vmin;
+    margin: 0 1vmin;
     text-decoration: none;
     list-style-type: none;
+    background-color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 25px;
 }
 
 .header-link:hover {
