@@ -55,7 +55,8 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
                 },
                 body: JSON.stringify({
                     email: email,
-                    password: password
+                    password: password, 
+                    categories: []
                 }),
             });
 

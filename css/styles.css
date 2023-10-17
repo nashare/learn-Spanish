@@ -174,3 +174,7 @@ body {
     color: red;
     display: none;
 }
+
+.category-image-filter {
+    filter: opacity(50%);
+}

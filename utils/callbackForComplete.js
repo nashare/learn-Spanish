@@ -1,5 +1,26 @@
 import { generateSections, shuffleArray } from "./categories.js";
 
+async function checkAndUpdateUser(userId, categoryToAdd) {
+    try {
+        let response = await fetch(`http://localhost:3000/users/${userId}`);
+        let user = await response.json();
+
+        if (!user.categories.includes(categoryToAdd)) {
+            user.categories.push(categoryToAdd);
+
+            response = await fetch(`http://localhost:3000/users/${userId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 export function callbackForComplete(category) {
     let wrongAnswersArr = JSON.parse(sessionStorage.getItem(`${category}TestWrongAnsw`))
     const completeEl = document.querySelector('.test-complete');
@@ -8,7 +29,9 @@ export function callbackForComplete(category) {
         completeHTML = `<p>Your result is 10/10. Great job!</p>
                         <a href="../../categories.html">
                         <button>Keep learning</button>
-                        </a>`
+                        </a>`;
+        const userId = sessionStorage.getItem("userID");
+        checkAndUpdateUser(userId, category);
     } else {
         const wrongAnswNum = 10 - wrongAnswersArr.length;
         const reviewSection = generateSections(category, wrongAnswersArr);
