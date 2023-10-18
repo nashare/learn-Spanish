@@ -1,5 +1,14 @@
 import { generateSections, shuffleArray } from '../../utils/categoryCreate.js';
 import { fruits } from '../../constants/words.js';
+import { header } from '../../components/header/header.js';
+import { footer } from '../../components/footer.js';
+import { loggedInTrueHeaderLinks } from '../../components/header/headerLinks/loggedInTrueHeaderLinks.js';
+
+document.querySelector('header').innerHTML = header();
+document.querySelector('footer').innerHTML = footer();
+
+const headerLinks = document.querySelector('.header-links');
+headerLinks.innerHTML = loggedInTrueHeaderLinks();
 
 const loggedIn = sessionStorage.getItem('loggedIn');
 
@@ -34,5 +43,4 @@ const logOut = document.getElementById("log-out");
 
 logOut.addEventListener('click', function () {
     sessionStorage.setItem('loggedIn', 'false');
-    window.location.href = '../../logIn.html';
 });

@@ -26,8 +26,16 @@
     {
       "email": "test@test.test",
       "password": "test@test.test",
-      "categories": [],
+      "categories": [
+        "fruits"
+      ],
       "id": 4
+    },
+    {
+      "email": "tes1t@test1.test",
+      "password": "tes1t@test1.test",
+      "categories": [],
+      "id": 5
     }
   ]
 }

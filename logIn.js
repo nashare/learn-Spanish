@@ -1,16 +1,18 @@
+import { header } from './components/header/header.js';
+import { footer } from './components/footer.js';
+import { loggedInFalseHeaderLinks } from './components/header/headerLinks/loggedInFalseHeaderLinks.js';
+
+document.querySelector('header').innerHTML = header();
+document.querySelector('footer').innerHTML = footer();
+
 const loggedIn = sessionStorage.getItem('loggedIn');
+
 const headerLinks = document.querySelector('.header-links');
+
 if (loggedIn === 'true') {
     window.location.href = "/categories/categories.html";
 } else {
-    headerLinks.innerHTML = `
-        <a href="./signup.html" class="header-link">
-            <li>Sign Up</li>
-        </a>
-        <a href="./login.html" class="header-link">
-            <li>Log In</li>
-        </a>
-    `;
+    headerLinks.innerHTML = loggedInFalseHeaderLinks();
     sessionStorage.setItem('loggedIn', 'false');
 }
 
