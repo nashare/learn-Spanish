@@ -60,6 +60,7 @@ export function callbackForTest(category) {
         if (inputField) {
             sessionStorage.setItem(`${category}TestUserValue`, String(inputField.value.trim()));
         }
+        window.location.href = `/categories/${category}/test/result.html`;
 
     });
 }

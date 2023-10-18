@@ -1,12 +1,3 @@
-import { callbackForComplete } from "../../../utils/callbackForComplete.js";
-import { loggedInCheck } from "../../../utils/loggedInCheck.js";
+import { setupCompletePage } from "../../../utils/test/setupCompletePage.js";
 
-loggedInCheck();
-
-document.addEventListener('DOMContentLoaded', callbackForComplete("animals"));
-
-const logOut = document.getElementById("log-out");
-
-logOut.addEventListener('click', function () {
-    sessionStorage.setItem('loggedIn', 'false');
-});
+setupCompletePage("animals");

@@ -1,4 +1,4 @@
-import { shuffleArray } from "./categoryCreate.js";
+import { shuffleArray } from "../categoryCreate.js";
 
 function excludeByIndex(arr, index) {
     return arr.slice(0, index).concat(arr.slice(index + 1));
