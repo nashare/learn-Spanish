@@ -34,7 +34,9 @@
     {
       "email": "tes1t@test1.test",
       "password": "tes1t@test1.test",
-      "categories": [],
+      "categories": [
+        "animals"
+      ],
       "id": 5
     }
   ]

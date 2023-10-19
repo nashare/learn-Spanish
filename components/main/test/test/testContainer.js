@@ -1,4 +1,4 @@
-export function test() {
+export function testContainer() {
     return `
         <div class="test"></div>
         <a>

@@ -1,15 +1,15 @@
-import { generateSections } from '../categoryCreate.js';
+import { categoryCreate } from './categoryCreate.js';
 import { shuffleArray } from '../shuffleArr.js';
 import { words } from '../../constants/words.js';
 import { header } from '../../components/header/header.js';
-import { footer } from '../../components/footer.js';
+import { footer } from '../../components/footer/footer.js';
 import { loggedInTrueHeaderLinks } from '../../components/header/headerLinks/loggedInTrueHeaderLinks.js';
-import { category } from '../../components/main/category/category.js';
+import { categoryContainer } from '../../components/main/category/categoryContainer.js';
 
 export function setupCategoryPage(categoryName) {
     document.querySelector('header').innerHTML = header();
     document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = category();
+    document.querySelector('main').innerHTML = categoryContainer();
 
     const headerLinks = document.querySelector('.header-links');
     headerLinks.innerHTML = loggedInTrueHeaderLinks();
@@ -25,7 +25,7 @@ export function setupCategoryPage(categoryName) {
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        const sectionsHTML = generateSections(categoryName, words[categoryName]);
+        const sectionsHTML = categoryCreate(categoryName, words[categoryName]);
         document.querySelector('.section-container').innerHTML = sectionsHTML;
     });
 

@@ -1,4 +1,4 @@
-export function category() {
+export function categoryContainer() {
     return `
         <ul class="section-container">
         </ul>

@@ -1,9 +1,9 @@
 import { callbackForResult } from "./callbackForResult.js";
 import { loggedInCheck } from "../loggedInCheck.js";
 import { header } from "../../components/header/header.js";
-import { footer } from "../../components/footer.js";
+import { footer } from "../../components/footer/footer.js";
 import { loggedInTrueHeaderLinks } from "../../components/header/headerLinks/loggedInTrueHeaderLinks.js";
-import { result } from "../../components/main/test/result.js";
+import { result } from "../../components/main/test/result/result.js";
 
 export function setupResultPage(category) {
     document.querySelector('header').innerHTML = header();

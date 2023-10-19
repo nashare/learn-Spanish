@@ -1,5 +1,5 @@
 import { header } from './components/header/header.js';
-import { footer } from './components/footer.js';
+import { footer } from './components/footer/footer.js';
 import { loggedInFalseHeaderLinks } from './components/header/headerLinks/loggedInFalseHeaderLinks.js';
 
 document.querySelector('header').innerHTML = header();
@@ -15,7 +15,7 @@ if (loggedIn === 'true') {
     sessionStorage.setItem('loggedIn', 'false');
 }
 
-document.getElementById("registrationForm").addEventListener("submit", async function (event) {
+document.getElementById("authForm").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const email = document.getElementById("email").value;

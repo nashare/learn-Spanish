@@ -1,4 +1,5 @@
 import { createGuessesArr, createTestHTML } from "./testCreate.js"
+import { textNumber } from "../../components/main/test/test/testNumber.js";
 
 export function callbackForTest(category) {
     const wordsForTest = JSON.parse(sessionStorage.getItem(category));
@@ -7,7 +8,7 @@ export function callbackForTest(category) {
     let testHTML = createTestHTML(category, wordsForTest[testNum - 1], arrayForGuesses);
 
     let currentlySelected = null;
-    testHTML = `<p class="test-number">${testNum} / 10</p>` + testHTML;
+    testHTML = textNumber(testNum) + testHTML;
     document.querySelector('.test').innerHTML += testHTML;
 
     const audioElement = document.getElementById(wordsForTest[testNum - 1] + '_audio');

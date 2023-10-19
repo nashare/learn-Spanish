@@ -13,21 +13,21 @@
     <main>
         <p>Please log in.</p>
         <p>Don't have an account? <a href="./signUp.html">Sign up</a> now.</p>
-        <form id="loginForm" action="/submit" method="post">
+        <form id="authForm" action="/submit" method="post">
             <div class="form-group">
-                <label for="loginEmail">Email:</label>
-                <input type="email" id="loginEmail" name="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
                 <span class="error-message" id="emailError">Please enter a valid email.</span>
             </div>
         
             <div class="form-group">
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" name="password" required minlength="8">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="8">
                 <span class="error-message" id="passwordError">Incorrect password.</span>
             </div>
         
             <button type="submit">Log In</button>
-            <div id="loginServerError" class="error-message"></div>
+            <div id="serverError" class="error-message"></div>
         </form>
     </main>
     <footer></footer>

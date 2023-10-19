@@ -1,5 +1,5 @@
 import { header } from './components/header/header.js';
-import { footer } from './components/footer.js';
+import { footer } from './components/footer/footer.js';
 import { loggedInFalseHeaderLinks } from './components/header/headerLinks/loggedInFalseHeaderLinks.js';
 
 document.querySelector('header').innerHTML = header();
@@ -16,11 +16,11 @@ if (loggedIn === 'true') {
     sessionStorage.setItem('loggedIn', 'false');
 }
 
-document.getElementById("loginForm").addEventListener("submit", async function (event) {
+document.getElementById("authForm").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     let isValid = true;
 
@@ -55,8 +55,8 @@ document.getElementById("loginForm").addEventListener("submit", async function (
                 sessionStorage.setItem('loggedIn', 'true');
                 window.location.href = "/categories/categories.html";
             } else {
-                document.getElementById("loginServerError").textContent = "Invalid login credentials. Please try again.";
-                document.getElementById("loginServerError").style.display = "block";
+                document.getElementById("serverError").textContent = "Invalid login credentials. Please try again.";
+                document.getElementById("serverError").style.display = "block";
             }
         } catch (error) {
             console.error("There was an error during the login:", error);

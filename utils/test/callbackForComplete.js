@@ -1,5 +1,7 @@
-import { generateSections } from "../categoryCreate.js";
+import { categoryCreate } from "../category/categoryCreate.js";
 import { shuffleArray } from "../shuffleArr.js";
+import { completeCorrect } from "../../components/main/test/complete/completeCorrect.js";
+import { completeWrong } from "../../components/main/test/complete/completeWrong.js";
 
 async function checkAndUpdateUser(userId, categoryToAdd) {
     try {
@@ -27,22 +29,13 @@ export function callbackForComplete(category) {
     const completeEl = document.querySelector('.test-complete');
     let completeHTML = "";
     if (wrongAnswersArr.length === 0) {
-        completeHTML = `<p>Your result is 10/10. Great job!</p>
-                        <a href="../../categories.html">
-                        <button>Keep learning</button>
-                        </a>`;
+        completeHTML = completeCorrect();
         const userId = sessionStorage.getItem("userID");
         checkAndUpdateUser(userId, category);
     } else {
         const wrongAnswNum = 10 - wrongAnswersArr.length;
-        const reviewSection = generateSections(category, wrongAnswersArr);
-        const wrongNumbSentencePart = wrongAnswNum === 1 ? "the word" : "these words";
-        completeHTML = `<p>Your result is ${wrongAnswNum}/10</p>
-                            <p>Please review ${wrongNumbSentencePart}:</p>
-                            ${reviewSection}
-                            <a href="../test-1/test-1.html">
-                                <button class="complete-button-practice">Practice</button>
-                            </a>`;
+        const reviewSection = categoryCreate(category, wrongAnswersArr);
+        completeHTML = completeWrong(wrongAnswNum, reviewSection);
         
     }
     completeEl.innerHTML = completeHTML;

@@ -1,3 +1,6 @@
+import { resultCorrect } from "../../components/main/test/result/resultCorrect.js";
+import { resultWrong } from "../../components/main/test/result/resultWrong.js";
+
 export function callbackForResult(category) {
     const userAnswer = sessionStorage.getItem(`${category}TestUserValue`);
     let testNum = parseInt(sessionStorage.getItem(`${category}TestNum`));
@@ -12,7 +15,7 @@ export function callbackForResult(category) {
                 .toLowerCase();
         };
         if (normalizeString(userAnswer) === normalizeString(wordsArrForTest[testNum - 1])) {
-            storedTestContent = "<p class='result-p-green'>Correct!</p>" + storedTestContent;
+            storedTestContent = resultCorrect() + storedTestContent;
             testResultDiv.innerHTML = storedTestContent;
             const testContainer = document.querySelector('.test-container');
             const testGuesses = document.querySelector('.test-guesses');
@@ -29,7 +32,7 @@ export function callbackForResult(category) {
             let wrongAnswersArr = JSON.parse(sessionStorage.getItem(`${category}TestWrongAnsw`)) || [];
             wrongAnswersArr.push(wordsArrForTest[testNum - 1]);
             sessionStorage.setItem(`${category}TestWrongAnsw`, JSON.stringify(wrongAnswersArr));
-            storedTestContent = "<p class='result-p-wrong'>Oops! That was not correct.</p>" + storedTestContent;
+            storedTestContent = resultWrong() + storedTestContent;
             testResultDiv.innerHTML = storedTestContent;
             const testContainer = document.querySelector('.test-container');
             const testGuesses = document.querySelector('.test-guesses');
