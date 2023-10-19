@@ -1,4 +1,5 @@
-import { generateSections, shuffleArray } from '../categoryCreate.js';
+import { generateSections } from '../categoryCreate.js';
+import { shuffleArray } from '../shuffleArr.js';
 import { words } from '../../constants/words.js';
 import { header } from '../../components/header/header.js';
 import { footer } from '../../components/footer.js';

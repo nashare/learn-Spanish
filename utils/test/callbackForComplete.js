@@ -1,4 +1,5 @@
-import { generateSections, shuffleArray } from "../categoryCreate.js";
+import { generateSections } from "../categoryCreate.js";
+import { shuffleArray } from "../shuffleArr.js";
 
 async function checkAndUpdateUser(userId, categoryToAdd) {
     try {
