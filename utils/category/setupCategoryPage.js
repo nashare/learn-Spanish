@@ -5,36 +5,27 @@ import { header } from '../../components/header/header.js';
 import { footer } from '../../components/footer/footer.js';
 import { loggedInTrueHeaderLinks } from '../../components/header/headerLinks/loggedInTrueHeaderLinks.js';
 import { categoryContainer } from '../../components/main/category/categoryContainer.js';
+import { logOut } from '../auth/logOut.js';
+import { loggedInCheck } from '../auth/loggedInCheck.js';
+import { playSound } from '../playSound.js';
 
 export function setupCategoryPage(categoryName) {
+
+    loggedInCheck();
+
     document.querySelector('header').innerHTML = header();
     document.querySelector('footer').innerHTML = footer();
     document.querySelector('main').innerHTML = categoryContainer();
+    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks();
 
-    const headerLinks = document.querySelector('.header-links');
-    headerLinks.innerHTML = loggedInTrueHeaderLinks();
-
-    const loggedIn = sessionStorage.getItem('loggedIn');
-
-    if (!loggedIn) {
-        sessionStorage.setItem('loggedIn', 'false');
-        window.location.href = '../../logIn.html';
-    }
-    if (loggedIn === 'false') {
-        window.location.href = '../../logIn.html';
-    }
+    logOut();
 
     document.addEventListener('DOMContentLoaded', function () {
         const sectionsHTML = categoryCreate(categoryName, words[categoryName]);
         document.querySelector('.section-container').innerHTML = sectionsHTML;
     });
 
-    document.querySelector('.section-container').addEventListener('click', function (event) {
-        if (event.target.tagName === 'BUTTON') {
-            let audio = document.getElementById(event.target.id + '_audio');
-            audio.play();
-        }
-    });
+    playSound('.section-container');
 
     document.querySelector('.categories-practice').addEventListener('click', function (event) {
         const arrForSessionStorage = shuffleArray(words[categoryName]);
@@ -42,11 +33,5 @@ export function setupCategoryPage(categoryName) {
         sessionStorage.setItem(`${categoryName}TestNum`, '1');
         sessionStorage.setItem(`${categoryName}TestWrongAnsw`, JSON.stringify([]));
         window.location.href = `/categories/${categoryName}/test-1/test-1.html`;
-    });
-
-    const logOut = document.getElementById("log-out");
-
-    logOut.addEventListener('click', function () {
-        sessionStorage.setItem('loggedIn', 'false');
     });
 }

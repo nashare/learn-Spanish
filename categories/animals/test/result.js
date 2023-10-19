@@ -1,3 +1,3 @@
-import { setupResultPage } from "../../../utils/test/setupResultPage.js";
+import { setupResultPage } from "../../../utils/test/result/setupResultPage.js";
 
 setupResultPage("animals");
