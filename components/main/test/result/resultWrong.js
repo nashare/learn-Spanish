@@ -1,3 +1,2 @@
-export function resultWrong() {
-    return `<p class='result-p-wrong'>Oops! That was not correct.</p>`;
-}
+export const resultWrong = 
+    `<p class='result-p-wrong'>Oops! That was not correct.</p>`;

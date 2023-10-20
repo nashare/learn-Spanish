@@ -1,5 +1,5 @@
-export function loggedInFalseHeaderLinks() {
-    return `
+export const loggedInFalseHeaderLinks = 
+    `
         <a href='./signup.html' class='header-link'>
             <li>Sign Up</li>
         </a>
@@ -7,4 +7,3 @@ export function loggedInFalseHeaderLinks() {
             <li>Log In</li>
         </a>
     `;
-}

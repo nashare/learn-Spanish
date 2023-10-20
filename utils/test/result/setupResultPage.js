@@ -10,10 +10,10 @@ export function setupResultPage(category) {
 
     loggedInCheck();
 
-    document.querySelector('header').innerHTML = header();
-    document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = resultContainer();
-    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks();
+    document.querySelector('header').innerHTML = header;
+    document.querySelector('footer').innerHTML = footer;
+    document.querySelector('main').innerHTML = resultContainer;
+    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks;
     
     document.addEventListener('DOMContentLoaded', callbackForResult(category));
 

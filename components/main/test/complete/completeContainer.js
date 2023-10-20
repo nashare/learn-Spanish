@@ -1,5 +1,1 @@
-export function completeContainer() {
-    return `
-        <div class='test-complete'>COMPLETE</div>
-    `;
-}
+export const completeContainer = "<div class='test-complete'>COMPLETE</div>";

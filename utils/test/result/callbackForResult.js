@@ -21,7 +21,7 @@ export function callbackForResult(category) {
 
     if (isAnswerCorrect) {
 
-        testResultDiv.innerHTML += resultCorrect();
+        testResultDiv.innerHTML += resultCorrect;
         testResultDiv.innerHTML += storedTestContent;
         const testContainer = document.querySelector('.test-container');
         const testGuesses = document.querySelector('.test-guesses');
@@ -39,7 +39,7 @@ export function callbackForResult(category) {
         wrongAnswersArr.push(wordsArrForTest[testNum - 1]);
         sessionStorage.setItem(`${category}TestWrongAnsw`, JSON.stringify(wrongAnswersArr));
 
-        testResultDiv.innerHTML += resultWrong();
+        testResultDiv.innerHTML += resultWrong;
         testResultDiv.innerHTML += storedTestContent;
         const testContainer = document.querySelector('.test-container');
         const testGuesses = document.querySelector('.test-guesses');

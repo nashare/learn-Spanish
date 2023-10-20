@@ -10,10 +10,10 @@ export function setupTestPage(category) {
     
     loggedInCheck();
 
-    document.querySelector('header').innerHTML = header();
-    document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = testContainer();
-    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks();
+    document.querySelector('header').innerHTML = header;
+    document.querySelector('footer').innerHTML = footer;
+    document.querySelector('main').innerHTML = testContainer;
+    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks;
     
     document.addEventListener('DOMContentLoaded', callbackForTest(category));
 

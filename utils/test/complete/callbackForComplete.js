@@ -13,7 +13,7 @@ export function callbackForComplete(category) {
     if (wrongAnswersArr.length === 0) {
         const userId = sessionStorage.getItem('userID');
         checkAndUpdateUser(userId, category);
-        completeHTML = completeCorrect();
+        completeHTML = completeCorrect;
     } else {
         const wrongAnswNum = 10 - wrongAnswersArr.length;
         const reviewSection = categoryCreate(category, wrongAnswersArr);

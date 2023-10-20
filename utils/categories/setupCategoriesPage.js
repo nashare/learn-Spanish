@@ -12,11 +12,11 @@ export function setupCategoriesPage() {
     
     loggedInCheck();
 
-    document.querySelector('header').innerHTML = header();
-    document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = categoriesContainer();
+    document.querySelector('header').innerHTML = header;
+    document.querySelector('footer').innerHTML = footer;
+    document.querySelector('main').innerHTML = categoriesContainer;
     document.querySelector('.categories-container').innerHTML = categoriesCreate(words);
-    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks();
+    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks;
 
     const userId = sessionStorage.getItem('userID');
 

@@ -7,7 +7,7 @@ export function loggedInCheckForAuth() {
     if (loggedIn === 'true') {
         window.location.href = '/categories/categories.html';
     } else {
-        headerLinks.innerHTML = loggedInFalseHeaderLinks();
+        headerLinks.innerHTML = loggedInFalseHeaderLinks;
         sessionStorage.setItem('loggedIn', 'false');
     }
 }

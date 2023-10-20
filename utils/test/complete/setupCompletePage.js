@@ -11,10 +11,10 @@ export function setupCompletePage(category) {
 
     loggedInCheck();
 
-    document.querySelector('header').innerHTML = header();
-    document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = completeContainer();
-    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks();
+    document.querySelector('header').innerHTML = header;
+    document.querySelector('footer').innerHTML = footer;
+    document.querySelector('main').innerHTML = completeContainer;
+    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks;
 
     document.addEventListener('DOMContentLoaded', callbackForComplete(category));
 

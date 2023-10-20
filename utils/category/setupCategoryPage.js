@@ -13,10 +13,10 @@ export function setupCategoryPage(categoryName) {
 
     loggedInCheck();
 
-    document.querySelector('header').innerHTML = header();
-    document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = categoryContainer();
-    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks();
+    document.querySelector('header').innerHTML = header;
+    document.querySelector('footer').innerHTML = footer;
+    document.querySelector('main').innerHTML = categoryContainer;
+    document.querySelector('.header-links').innerHTML = loggedInTrueHeaderLinks;
 
     logOut();
 

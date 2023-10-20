@@ -7,17 +7,17 @@ import { logOut } from '../../utils/auth/logOut.js'
 
 
 export function setupIndexPage() {
-    document.querySelector('header').innerHTML = header();
-    document.querySelector('footer').innerHTML = footer();
-    document.querySelector('main').innerHTML = index();
+    document.querySelector('header').innerHTML = header;
+    document.querySelector('footer').innerHTML = footer;
+    document.querySelector('main').innerHTML = index;
 
     const loggedIn = sessionStorage.getItem('loggedIn');
     const headerLinks = document.querySelector('.header-links');
 
     if (loggedIn === 'true') {
-        headerLinks.innerHTML = loggedInTrueHeaderLinks();
+        headerLinks.innerHTML = loggedInTrueHeaderLinks;
     } else {
-        headerLinks.innerHTML = loggedInFalseHeaderLinks();
+        headerLinks.innerHTML = loggedInFalseHeaderLinks;
         sessionStorage.setItem('loggedIn', 'false');
     }
     

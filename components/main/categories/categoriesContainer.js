@@ -1,6 +1,3 @@
-export function categoriesContainer() {
-    return `
-        <ul class='categories-container'>
-        </ul>
-    `;
-}
+export const categoriesContainer = 
+    `<ul class='categories-container'>
+    </ul>`;
