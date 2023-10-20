@@ -24,26 +24,10 @@
       "id": 3
     },
     {
-      "email": "test@test.test",
-      "password": "test@test.test",
-      "categories": [
-        "fruits"
-      ],
-      "id": 4
-    },
-    {
-      "email": "tes1t@test1.test",
-      "password": "tes1t@test1.test",
-      "categories": [
-        "animals"
-      ],
-      "id": 5
-    },
-    {
-      "email": "responseData@gmail.com",
-      "password": "12345678",
+      "email": "newtest@test.test",
+      "password": "newtest@test.test",
       "categories": [],
-      "id": 6
+      "id": 4
     }
   ]
 }

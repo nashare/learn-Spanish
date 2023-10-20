@@ -1,22 +1,17 @@
+import { getUserCall } from './getUserCall.js';
+import { handleSuccessfulAuth } from '../handleSuccessfulAuth.js';
+import { displayLoginError } from '../displayError.js';
+
 export async function getUser(email, password) {
     try {
-        const response = await fetch(`http://localhost:3000/users?email=${email}&password=${password}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        const responseData = await response.json();
-        if (responseData.length !== 0) {
-            sessionStorage.setItem('userID', responseData[0].id);
-            sessionStorage.setItem('loggedIn', 'true');
-            window.location.href = '/categories/categories.html';
+        const userData = await getUserCall(email, password);
+        if (userData.length !== 0) {
+            handleSuccessfulAuth(userData[0].id);
         } else {
-            document.getElementById('serverError').textContent = 'Invalid login credentials. Please try again.';
-            document.getElementById('serverError').style.display = 'block';
+            displayLoginError('Invalid login credentials. Please try again.');
         }
     } catch (error) {
         console.error('There was an error during the login:', error);
     }
 }
+

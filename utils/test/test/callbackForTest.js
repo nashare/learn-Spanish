@@ -11,8 +11,8 @@ export function callbackForTest(category) {
     document.querySelector('.test').innerHTML += textNumber(testNum);
     document.querySelector('.test').innerHTML += createTestHTML(category, wordsForTest[testNum - 1], arrayForGuesses);
 
-    const radios = document.querySelectorAll('input[type='radio']');
-    const inputField = document.querySelector('.test-container input[type='text']');
+    const radios = document.querySelectorAll('input[type="radio"]');
+    const inputField = document.querySelector('.test-container input[type="text"]');
     const checkButton = document.querySelector('.test-check');
 
     if (radios) {
@@ -34,7 +34,7 @@ export function callbackForTest(category) {
     };
 
     checkButton.addEventListener('click', function () {
-        const selectedRadio = document.querySelector('input[type='radio']:checked');
+        const selectedRadio = document.querySelector('input[type="radio"]:checked');
         if (selectedRadio) {
             sessionStorage.setItem(`${category}TestUserValue`, String(selectedRadio.value));
         }
