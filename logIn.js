@@ -1,3 +1,3 @@
-import { setupLogInPage } from "./utils/auth/logIn/setupLogInPage.js";
+import { setupLogInPage } from './utils/auth/logIn/setupLogInPage.js';
 
 setupLogInPage();

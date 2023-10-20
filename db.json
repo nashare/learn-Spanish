@@ -38,6 +38,12 @@
         "animals"
       ],
       "id": 5
+    },
+    {
+      "email": "responseData@gmail.com",
+      "password": "12345678",
+      "categories": [],
+      "id": 6
     }
   ]
 }

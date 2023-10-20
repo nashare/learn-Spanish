@@ -1,17 +1,17 @@
-import { categoryCreate } from "../../category/categoryCreate.js";
-import { shuffleArray } from "../../shuffleArr.js";
-import { completeCorrect } from "../../../components/main/test/complete/completeCorrect.js";
-import { completeWrong } from "../../../components/main/test/complete/completeWrong.js";
-import { checkAndUpdateUser } from "./checkAndUpdateUser.js";
-import { words } from "../../../constants/words.js";
+import { categoryCreate } from '../../category/categoryCreate.js';
+import { shuffleArray } from '../../shuffleArr.js';
+import { completeCorrect } from '../../../components/main/test/complete/completeCorrect.js';
+import { completeWrong } from '../../../components/main/test/complete/completeWrong.js';
+import { checkAndUpdateUser } from './checkAndUpdateUser.js';
+import { words } from '../../../constants/words.js';
 
 export function callbackForComplete(category) {
 
     let wrongAnswersArr = JSON.parse(sessionStorage.getItem(`${category}TestWrongAnsw`))
-    let completeHTML = "";
+    let completeHTML = '';
 
     if (wrongAnswersArr.length === 0) {
-        const userId = sessionStorage.getItem("userID");
+        const userId = sessionStorage.getItem('userID');
         checkAndUpdateUser(userId, category);
         completeHTML = completeCorrect();
     } else {
@@ -22,7 +22,7 @@ export function callbackForComplete(category) {
 
     document.querySelector('.test-complete').innerHTML = completeHTML;
 
-    const practiceButton = document.querySelector(".complete-button-practice");
+    const practiceButton = document.querySelector('.complete-button-practice');
     if (practiceButton) {
         practiceButton.addEventListener('click', function () {
             const shuffledArrayForPractice = shuffleArray(words[category]);

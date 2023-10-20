@@ -12,7 +12,7 @@ export function setupIndexPage() {
     document.querySelector('main').innerHTML = index();
 
     const loggedIn = sessionStorage.getItem('loggedIn');
-    const headerLinks = document.querySelector(".header-links");
+    const headerLinks = document.querySelector('.header-links');
 
     if (loggedIn === 'true') {
         headerLinks.innerHTML = loggedInTrueHeaderLinks();

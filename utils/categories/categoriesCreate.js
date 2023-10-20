@@ -1,4 +1,4 @@
-import { categoriesContent } from "../../components/main/categories/categoriesContent.js";
+import { categoriesContent } from '../../components/main/categories/categoriesContent.js';
 
 export function categoriesCreate(wordsObj) {
     let categoriesHTML = '';

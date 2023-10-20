@@ -1,7 +1,7 @@
 export function imageAndInputTest(categoryName, word) {
     return `
-            <section class="test-container">
-                <img src="../../../content/${categoryName}/${word}/${word}.jpg">
-                <input type="text">
+            <section class='test-container'>
+                <img src='../../../content/${categoryName}/${word}/${word}.jpg'>
+                <input type='text'>
             </section>`
 }

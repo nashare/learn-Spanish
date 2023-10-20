@@ -21,35 +21,35 @@ export function setupSignUpPage() {
 
     loggedInCheckForAuth();
 
-    document.querySelector(".authForm").addEventListener("submit", async function (event) {
+    document.querySelector('.authForm').addEventListener('submit', async function (event) {
         event.preventDefault();
 
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const passwordConfirm = document.getElementById("passwordConfirm").value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const passwordConfirm = document.getElementById('passwordConfirm').value;
 
         let isValid = true;
 
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!emailRegex.test(email)) {
-            document.getElementById("emailError").style.display = "block";
+            document.getElementById('emailError').style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById("emailError").style.display = "none";
+            document.getElementById('emailError').style.display = 'none';
         }
 
         if (password.length < 8) {
-            document.getElementById("passwordError").style.display = "block";
+            document.getElementById('passwordError').style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById("passwordError").style.display = "none";
+            document.getElementById('passwordError').style.display = 'none';
         }
 
         if (password !== passwordConfirm) {
-            document.getElementById("passwordConfirmError").style.display = "block";
+            document.getElementById('passwordConfirmError').style.display = 'block';
             isValid = false;
         } else {
-            document.getElementById("passwordConfirmError").style.display = "none";
+            document.getElementById('passwordConfirmError').style.display = 'none';
         }
 
         if (isValid) {
@@ -67,17 +67,16 @@ export function setupSignUpPage() {
                 });
 
                 const responseData = await response.json();
-
                 if (response.ok) {
                     sessionStorage.setItem('userID', responseData.id);
                     sessionStorage.setItem('loggedIn', 'true');
-                    window.location.href = "/categories/categories.html";
+                    window.location.href = '/categories/categories.html';
                 } else {
-                    document.getElementById("serverError").textContent = responseData.error;
-                    document.getElementById("serverError").style.display = "block";
+                    document.getElementById('serverError').textContent = responseData.error;
+                    document.getElementById('serverError').style.display = 'block';
                 }
             } catch (error) {
-                console.error("There was an error during the registration:", error);
+                console.error('There was an error during the registration:', error);
             }
         }
     });

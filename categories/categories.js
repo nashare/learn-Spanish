@@ -1,4 +1,4 @@
-import { setupCategoriesPage } from "../utils/categories/setupCategoriesPage.js";
+import { setupCategoriesPage } from '../utils/categories/setupCategoriesPage.js';
 
 setupCategoriesPage();
 

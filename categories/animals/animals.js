@@ -1,3 +1,3 @@
-import { setupCategoryPage } from "../../utils/category/setupCategoryPage.js";
+import { setupCategoryPage } from '../../utils/category/setupCategoryPage.js';
 
-setupCategoryPage("animals");
+setupCategoryPage('animals');

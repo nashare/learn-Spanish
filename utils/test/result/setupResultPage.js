@@ -1,10 +1,10 @@
-import { callbackForResult } from "./callbackForResult.js";
-import { loggedInCheck } from "../../auth/loggedInCheck.js";
-import { header } from "../../../components/header/header.js";
-import { footer } from "../../../components/footer/footer.js";
-import { loggedInTrueHeaderLinks } from "../../../components/header/headerLinks/loggedInTrueHeaderLinks.js";
-import { resultContainer } from "../../../components/main/test/result/resultContainer.js";
-import { logOut } from "../../auth/logOut.js";
+import { callbackForResult } from './callbackForResult.js';
+import { loggedInCheck } from '../../auth/loggedInCheck.js';
+import { header } from '../../../components/header/header.js';
+import { footer } from '../../../components/footer/footer.js';
+import { loggedInTrueHeaderLinks } from '../../../components/header/headerLinks/loggedInTrueHeaderLinks.js';
+import { resultContainer } from '../../../components/main/test/result/resultContainer.js';
+import { logOut } from '../../auth/logOut.js';
 
 export function setupResultPage(category) {
 

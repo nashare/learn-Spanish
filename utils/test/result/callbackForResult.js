@@ -1,7 +1,7 @@
-import { resultCorrect } from "../../../components/main/test/result/resultCorrect.js";
-import { resultWrong } from "../../../components/main/test/result/resultWrong.js";
-import { playSound } from "../../playSound.js";
-import { normalizeString } from "./normalizeString.js";
+import { resultCorrect } from '../../../components/main/test/result/resultCorrect.js';
+import { resultWrong } from '../../../components/main/test/result/resultWrong.js';
+import { playSound } from '../../playSound.js';
+import { normalizeString } from './normalizeString.js';
 
 export function callbackForResult(category) {
 

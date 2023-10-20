@@ -1,3 +1,3 @@
-import { setupCompletePage } from "../../../utils/test/complete/setupCompletePage.js";
+import { setupCompletePage } from '../../../utils/test/complete/setupCompletePage.js';
 
-setupCompletePage("animals");
+setupCompletePage('animals');
