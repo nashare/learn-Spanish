@@ -1,5 +1,5 @@
 import { handleSuccessfulAuth } from '../handleSuccessfulAuth.js';
-import { displayLoginError } from '../displayError.js';
+import { displayError } from '../displayError.js';
 import { postUserCall } from './postUserCall.js';
 
 export async function postUser(email, password) {
@@ -8,7 +8,7 @@ export async function postUser(email, password) {
         if (response) {
             handleSuccessfulAuth(response.id);
         } else {
-            displayLoginError(response.error);
+            displayError(response.error);
         }
     } catch (error) {
         console.error('There was an error during the registration:', error);
