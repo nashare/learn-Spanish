@@ -1,4 +1,3 @@
-import { shuffleArray } from '../../shuffleArr.js';
 import { wordAndImagesTest } from '../../../components/main/test/test/wordAndImagesTest.js';
 import { soundAndImagesTest } from '../../../components/main/test/test/soundAndImagesTest.js';
 import { imageAndTextsTest } from '../../../components/main/test/test/imageAndTextsTest.js';
@@ -14,7 +13,7 @@ function excludeByIndex(arr, index) {
 
 function createGuessesArr(arr, ind) {
     const arrayWithoutTestWord = excludeByIndex(arr, ind);
-    return shuffleArray(arrayWithoutTestWord).slice(0, 3);
+    return chance.shuffle(arrayWithoutTestWord).slice(0, 3);
 }
 
 function wordAndImages(categoryName, word, shuffledGuesses) {
@@ -37,15 +36,11 @@ function imageAndInput(categoryName, word) {
     return imageAndInputTest(categoryName, word);
 }
 
-function randomBetweenOneAndFour() {
-    return Math.floor(Math.random() * 4) + 1;
-}
-
 function createTestHTML(category, word, arrayForGuesses) {
-    const testType = randomBetweenOneAndFour();
+    const testType = chance.integer({ min: 1, max: 4 });
     const allWords = [...arrayForGuesses];
     allWords.push(word);
-    const shuffledGuesses = shuffleArray(allWords);
+    const shuffledGuesses = chance.shuffle(allWords);
     switch (testType) {
         case 1:
             return wordAndImages(category, word, shuffledGuesses);

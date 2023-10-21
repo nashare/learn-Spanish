@@ -8,4 +8,4 @@ export const index =
             
         </div>
     </section>
-    <a href='./categories/categories.html'><button>Start Learning</button></a>`
+    <a href='./categories/categories.html'><button class="yellow-button">Start Learning</button></a>`

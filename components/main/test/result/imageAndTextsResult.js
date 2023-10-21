@@ -4,20 +4,20 @@ export function imageAndTextsResult(categoryName, word, shuffledGuesses) {
             <img src='../../../content/${categoryName}/${word}/${word}.jpg'>
             <div class='test-guesses'>
                 <label class='radio-label'>
-                    <input type='radio' disabled >
-                    <p id='${shuffledGuesses[0]}' class='radio-label-p'>${shuffledGuesses[0]}</p>
+                    <input type='radio' disabled class='margin-0'>
+                    <p id='${shuffledGuesses[0]}' class='radio-label-p margin-0'>${shuffledGuesses[0]}</p>
                 </label>
                 <label class='radio-label'>
-                    <input type='radio' disabled>
-                    <p id='${shuffledGuesses[1]}' class='radio-label-p'>${shuffledGuesses[1]}</p>
+                    <input type='radio' disabled class='margin-0'>
+                    <p id='${shuffledGuesses[1]}' class='radio-label-p margin-0'>${shuffledGuesses[1]}</p>
                 </label>
                 <label class='radio-label'>
-                    <input type='radio' disabled>
-                    <p id='${shuffledGuesses[2]}' class='radio-label-p'>${shuffledGuesses[2]}</p>
+                    <input type='radio' disabled class='margin-0'>
+                    <p id='${shuffledGuesses[2]}' class='radio-label-p margin-0'>${shuffledGuesses[2]}</p>
                 </label>
                 <label class='radio-label'>
-                    <input type='radio' disabled>
-                    <p id='${shuffledGuesses[3]}' class='radio-label-p'>${shuffledGuesses[3]}</p>
+                    <input type='radio' disabled class='margin-0'>
+                    <p id='${shuffledGuesses[3]}' class='radio-label-p margin-0'>${shuffledGuesses[3]}</p>
                 </label>
             </div>
         </section>`

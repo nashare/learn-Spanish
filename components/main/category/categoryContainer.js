@@ -1,6 +1,6 @@
 export const categoryContainer =
-    `<ul class='section-container'>
+    `<ul class='category-container'>
     </ul>
     <a>
-        <button class='categories-practice'>Practice</button>
+        <button class='category-practice yellow-button'>Practice</button>
     </a>`;

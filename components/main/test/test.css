@@ -1,0 +1,134 @@
+.test-general {
+    margin-top: 3vmin;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .test-general {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .test-general {
+        width: 75%;
+    }
+}
+
+.test-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.test-complete {
+    margin-top: 3vmin;
+    width: 50%;
+    display: grid;
+    gap: 3vmin;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-1 {
+    margin: 1vmin;
+}
+
+.margin-2 {
+    margin: 2vmin;
+}
+
+.margin-4 {
+    margin: 4vmin;
+}
+
+.test-word {
+    font-weight: bolder;
+}
+
+.test-guesses {
+    margin: 2vmin 0 0 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+.radio-label {
+    margin: 1vmin;
+    display: flex;
+    flex-direction: row;
+}
+
+.hidden-radio {
+    display: none;
+}
+
+.hidden-radio:checked+img {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.result-p-red {
+    text-decoration: line-through;
+    color: rgb(200, 30, 30);
+    margin: 1vmin;
+}
+
+.result-p-green {
+    color: green;
+    margin: 1vmin;
+}
+
+.result-img-green {
+    border: 0.4vmin green solid;
+}
+
+.result-img-red {
+    border: 0.4vmin rgb(200, 30, 30) solid;
+}
+
+.test-guesses-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vmin;
+}
+
+.radio-label-p {
+    margin: 1vmin 0;
+}
+
+.result-p-wrong {
+    color: rgb(200, 30, 30);
+}
+
+.test-input {
+    margin: 2vmin;
+    padding: 1.5vmin;
+    border: 0.2vmin solid grey;
+    border-radius: 3vmin;
+    outline: none;
+}
+
+.test-complete-result {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4vmin;
+    margin: 0;
+}
+
+.complete-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}

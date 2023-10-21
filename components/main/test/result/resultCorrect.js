@@ -1,1 +1,1 @@
-export const resultCorrect = '<p class="result-p-green">Correct!</p>';
+export const resultCorrect = '<p class="result-p-green margin-2">Correct!</p>';

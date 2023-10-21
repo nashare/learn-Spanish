@@ -26,13 +26,18 @@
     {
       "email": "newtest@test.test",
       "password": "newtest@test.test",
-      "categories": [],
+      "categories": [
+        "colors",
+        "animals"
+      ],
       "id": 4
     },
     {
       "email": "tes1t@test1.test",
       "password": "tes1t@test1.test",
-      "categories": ["fruits"],
+      "categories": [
+        "fruits"
+      ],
       "id": 5
     }
   ]

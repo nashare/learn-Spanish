@@ -1,5 +1,4 @@
 import { categoryCreate } from '../../category/categoryCreate.js';
-import { shuffleArray } from '../../shuffleArr.js';
 import { completeCorrect } from '../../../components/main/test/complete/completeCorrect.js';
 import { completeWrong } from '../../../components/main/test/complete/completeWrong.js';
 import { checkAndUpdateUser } from './checkAndUpdateUser.js';
@@ -25,7 +24,7 @@ export function callbackForComplete(category) {
     const practiceButton = document.querySelector('.complete-button-practice');
     if (practiceButton) {
         practiceButton.addEventListener('click', function () {
-            const shuffledArrayForPractice = shuffleArray(words[category]);
+            const shuffledArrayForPractice = chance.shuffle(words[category]);
             sessionStorage.setItem(category, JSON.stringify(shuffledArrayForPractice));
             sessionStorage.setItem(`${category}TestNum`, '1');
             sessionStorage.setItem(`${category}TestUserValue`, '');

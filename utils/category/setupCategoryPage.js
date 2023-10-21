@@ -1,5 +1,4 @@
 import { categoryCreate } from './categoryCreate.js';
-import { shuffleArray } from '../shuffleArr.js';
 import { words } from '../../constants/words.js';
 import { header } from '../../components/header/header.js';
 import { footer } from '../../components/footer/footer.js';
@@ -22,13 +21,13 @@ export function setupCategoryPage(categoryName) {
 
     document.addEventListener('DOMContentLoaded', function () {
         const sectionsHTML = categoryCreate(categoryName, words[categoryName]);
-        document.querySelector('.section-container').innerHTML = sectionsHTML;
+        document.querySelector('.category-container').innerHTML = sectionsHTML;
     });
 
-    playSound('.section-container');
+    playSound('.category-container');
 
-    document.querySelector('.categories-practice').addEventListener('click', function (event) {
-        const arrForSessionStorage = shuffleArray(words[categoryName]);
+    document.querySelector('.category-practice').addEventListener('click', function (event) {
+        const arrForSessionStorage = chance.shuffle(words[categoryName]);
         sessionStorage.setItem(categoryName, JSON.stringify(arrForSessionStorage));
         sessionStorage.setItem(`${categoryName}TestNum`, '1');
         sessionStorage.setItem(`${categoryName}TestWrongAnsw`, JSON.stringify([]));

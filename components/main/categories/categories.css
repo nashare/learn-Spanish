@@ -1,0 +1,28 @@
+.categories-container {
+    width: 70%;
+    margin: 5vmin 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3vmin;
+    padding: 0;
+}
+
+.category {
+    list-style-type: none;
+}
+
+.category-image-filter {
+    filter: opacity(50%);
+}
+
+@media (max-width: 1024px) {
+    .categories-container {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-container {
+        grid-template-columns: 1fr;
+    }
+}

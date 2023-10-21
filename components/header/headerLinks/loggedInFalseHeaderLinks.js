@@ -1,6 +1,6 @@
 export const loggedInFalseHeaderLinks = 
     `
-        <a href='./signup.html' class='header-link'>
+        <a href='./signup.html' class='linkheader-link'>
             <li>Sign Up</li>
         </a>
         <a href='./login.html' class='header-link'>
