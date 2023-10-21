@@ -58,3 +58,8 @@ img {
 .link:visited {
     color: inherit;
 }
+
+.form-group label,
+.form-group input {
+    display: block;
+}

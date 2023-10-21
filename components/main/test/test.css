@@ -31,9 +31,6 @@
     width: 50%;
     display: grid;
     gap: 3vmin;
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 .margin-0 {

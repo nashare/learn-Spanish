@@ -1,4 +1,54 @@
 .error-message {
-    color: red;
+    color: rgb(200, 30, 30);
     display: none;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vmin;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-message {
+    font-weight: bolder;
+    margin: 1vmin;
+    font-size: 3vmin;
+}
+
+@media (max-width: 768px) {
+    .auth-message {
+        font-size: 6vmin;
+    }
+}
+
+.auth-label {
+    margin: 1vmin 0 0.5vmin 0;
+}
+
+.auth-input {
+    padding: 0.7vmin 1.5vmin;
+    border-radius: 1vmin;
+    border: grey solid 1px;
+    font-size: 2vmin;
+}
+
+@media (max-width: 768px) {
+    .auth-input {
+        font-size: 3vmin;
+    }
+}
+
+@media (max-width: 600px) {
+    .auth-input {
+        font-size: 4vmin;
+    }
 }
