@@ -10,8 +10,13 @@ export function callbackForLogIn(event) {
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    emailValidation(email, isValid);
-    passwordValidation(password, isValid);
+
+    const emailValidRes = emailValidation(email);
+    const passValidRes = passwordValidation(password);
+    
+    if (!emailValidRes || !passValidRes) {
+        isValid = false;
+    }
 
     if (isValid) {
         getUser(email, password);

@@ -38,9 +38,7 @@ function imageAndInput(categoryName, word) {
 
 function createTestHTML(category, word, arrayForGuesses) {
     const testType = chance.integer({ min: 1, max: 4 });
-    const allWords = [...arrayForGuesses];
-    allWords.push(word);
-    const shuffledGuesses = chance.shuffle(allWords);
+    const shuffledGuesses = chance.shuffle([...arrayForGuesses, word]);
     switch (testType) {
         case 1:
             return wordAndImages(category, word, shuffledGuesses);
