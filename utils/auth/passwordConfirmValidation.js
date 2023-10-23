@@ -1,8 +1,9 @@
-export function passwordConfirmValidation(password, passwordConfirm, isValid) {
+export function passwordConfirmValidation(password, passwordConfirm) {
     if (password !== passwordConfirm) {
         document.getElementById('passwordConfirmError').style.display = 'block';
-        isValid = false;
+        return false;
     } else {
         document.getElementById('passwordConfirmError').style.display = 'none';
+        return true;
     }
 }

@@ -12,9 +12,13 @@ export function callbackForSignUp(event) {
 
     let isValid = true;
 
-    emailValidation(email, isValid);
-    passwordValidation(password, isValid);
-    passwordConfirmValidation(password, passwordConfirm, isValid);
+    const emailValidResult = emailValidation(email);
+    const passValidResult = passwordValidation(password);
+    const passConfValidResult = passwordConfirmValidation(password, passwordConfirm);
+
+    if (!emailValidResult || !passValidResult || !passConfValidResult) {
+        isValid = false
+    }
     
     if (isValid) {
         postUser(email, password);
