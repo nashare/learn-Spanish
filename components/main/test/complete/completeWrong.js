@@ -4,7 +4,7 @@ export function completeWrong(wrongAnswNum, reviewSection) {
         <p class="test-complete-result">Your result is ${wrongAnswNum}/10</p>
         <p class="test-complete-result">Please review ${wrongNumbSentencePart}:</p>
         ${reviewSection}
-        <a href='../test-1/test-1.html' class='complete-button-container'>
-            <button class='complete-button-practice yellow-button margin-2'>Practice</button>
+        <a href='../test-1/test-1.html' class='complete-button-container flex-column-center'>
+            <button class='complete-button-practice button-yellow margin-2'>Practice</button>
         </a>`
 }

@@ -14,7 +14,7 @@ export function setupSignUpPage() {
     document.querySelector('header').innerHTML = header;
     document.querySelector('footer').innerHTML = footer;
     document.querySelector('main').innerHTML = signUpContainer;
-    document.querySelector('.singup-container').innerHTML += authForm;
+    document.querySelector('.auth-container').innerHTML += authForm;
     document.querySelector('.authForm').innerHTML += formEmail;
     document.querySelector('.authForm').innerHTML += formPassword;
     document.querySelector('.authForm').innerHTML += formPasswordConfirm;

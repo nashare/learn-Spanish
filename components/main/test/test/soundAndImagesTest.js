@@ -1,10 +1,10 @@
 export function soundAndImagesTest(word, categoryName, shuffledGuesses) {
     return `
-            <section class='test-container'>
+            <section class='test-container flex-column-center'>
                 <audio id='${word}_audio'>
                     <source src='../../../content/${categoryName}/${word}/${word}.mp3' type='audio/mp3'>
                 </audio>
-                <button id='${word}' class='yellow-button'>Play</button>
+                <button id='${word}' class='button-yellow'>Play</button>
                 <div class='test-guesses test-guesses-images'>
                     <label class='image-label'>
                         <input type='radio' name='imageChoice' class='hidden-radio' value='${shuffledGuesses[0]}'>

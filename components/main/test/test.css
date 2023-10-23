@@ -1,10 +1,6 @@
 .test-general {
     margin-top: 3vmin;
     width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -19,34 +15,11 @@
     }
 }
 
-.test-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .test-complete {
     margin-top: 3vmin;
     width: 50%;
     display: grid;
     gap: 3vmin;
-}
-
-.margin-0 {
-    margin: 0;
-}
-
-.margin-1 {
-    margin: 1vmin;
-}
-
-.margin-2 {
-    margin: 2vmin;
-}
-
-.margin-4 {
-    margin: 4vmin;
 }
 
 .test-word {
@@ -100,7 +73,7 @@
 }
 
 .radio-label-p {
-    margin: 1vmin 0;
+    margin: 0 1vmin;
 }
 
 .result-p-wrong {
@@ -123,9 +96,5 @@
 }
 
 .complete-button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
 }

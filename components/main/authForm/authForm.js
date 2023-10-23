@@ -1,3 +1,3 @@
 export const authForm =  
-        `<form class='authForm' action='/submit' method='post'>
+        `<form class='authForm flex-column-center' action='/submit' method='post'>
         </form>`

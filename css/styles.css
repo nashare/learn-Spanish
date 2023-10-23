@@ -5,6 +5,7 @@
 @import url('/components/main/category/category.css');
 @import url('/components/main/test/test.css');
 @import url('/components/main/authForm/authForm.css');
+@import url('/components/main/index/index.css');
 
 body {
     display: flex;
@@ -25,7 +26,7 @@ img {
     transition: box-shadow 0.3s;
 }
 
-.yellow-button {
+.button-yellow {
     background-color: #ffd450;
     font-size: large;
     color: black;
@@ -36,13 +37,13 @@ img {
     border: none;
 }
 
-.yellow-button:disabled {
+.button-yellow:disabled {
     opacity: 0.5;
     pointer-events: none;
     cursor: not-allowed;
 }
 
-.yellow-button:hover {
+.button-yellow:hover {
     text-decoration: underline;
 }
 
@@ -62,4 +63,23 @@ img {
 .form-group label,
 .form-group input {
     display: block;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-2 {
+    margin: 2vmin;
+}
+
+.margin-1-0 {
+    margin: 0.5vmin 0;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

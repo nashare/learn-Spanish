@@ -1,6 +1,6 @@
 export function wordAndImagesResult(word, shuffledGuesses, categoryName) {
     return `
-            <section class='test-container type-1'>
+            <section class='test-container flex-column-center type-1'>
                 <p class='test-word'>${word}</p>
                 <div class='test-guesses test-guesses-images'>
                     <img id=${shuffledGuesses[0]} src='../../../content/${categoryName}/${shuffledGuesses[0]}/${shuffledGuesses[0]}.jpg'>

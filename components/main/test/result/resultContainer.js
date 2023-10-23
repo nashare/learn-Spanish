@@ -1,3 +1,3 @@
 export const resultContainer = 
-    `<div class='test-result test-general'></div>
-    <button class='test-result-button yellow-button margin-2'>Next</button>`;
+    `<div class='test-result test-general flex-column-center'></div>
+    <button class='test-result-button button-yellow margin-2'>Next</button>`;

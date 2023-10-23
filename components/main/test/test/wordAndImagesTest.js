@@ -1,6 +1,6 @@
 export function wordAndImagesTest(word, shuffledGuesses, categoryName) {
     return `
-            <section class='test-container'>
+            <section class='test-container flex-column-center'>
                 <p class='test-word'>${word}</p>
                 <div class='test-guesses test-guesses-images'>
                     <label class='image-label'>
