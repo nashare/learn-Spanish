@@ -22,6 +22,18 @@
       "password": "test@test.com",
       "categories": [],
       "id": 3
+    },
+    {
+      "email": "adasd@dsv.cp",
+      "password": "biNveq-xusso1-qyjqet",
+      "categories": [],
+      "id": 4
+    },
+    {
+      "email": "fssf@fsfs.ef",
+      "password": "12345678",
+      "categories": [],
+      "id": 5
     }
   ]
 }

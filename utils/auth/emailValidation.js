@@ -1,10 +1,11 @@
+import { testEmail } from "./testEmail.js";
+
 export function emailValidation(email) {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailRegex.test(email)) {
-        document.getElementById('emailError').style.display = 'block';
-        return false;
-    } else {
+    if (testEmail(email)) {
         document.getElementById('emailError').style.display = 'none';
         return true;
+    } else {
+        document.getElementById('emailError').style.display = 'block';
+        return false
     }
 }
