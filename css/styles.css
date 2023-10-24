@@ -30,7 +30,7 @@ img {
 .button-yellow {
     background-color: #ffd450;
     font-size: large;
-    color: black;
+    color: #2a1c21;
     font-weight: bold;
     padding: 1.5vmin 4vmin;
     text-align: center;
@@ -49,6 +49,7 @@ img {
 }
 
 .link {
+    color: #2a1c21;
     text-decoration: none;
     list-style-type: none;
 }
