@@ -6,5 +6,7 @@ export const words = {
     animals: ['caballo', 'cerdo', 'conejo',
         'gato', 'oso', 'perro', 'pez', 'pollo', 'ratón', 'vaca'],
     transports: ['avión', 'barco', 'bicicleta',
-        'camión', 'carro', 'metro', 'motocicleta', 'taxi', 'tranvía', 'tren']
+        'camión', 'carro', 'metro', 'motocicleta', 'taxi', 'tranvía', 'tren'],
+    vegetables: ['tomate', 'patata', 'cebolla',
+        'zanahoria', 'pimienta', 'col', 'pepino', 'ajo', 'calabaza', 'guisante']
 };
