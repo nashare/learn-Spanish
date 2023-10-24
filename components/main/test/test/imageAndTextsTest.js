@@ -1,7 +1,10 @@
+import { normalizeString } from "../../../../utils/test/result/normalizeString.js";
+
 export function imageAndTextsTest(categoryName, word, shuffledGuesses) {
+    const wordForPath = normalizeString(word);
     return `
         <section class='test-container flex-column-center'>
-            <img src='../../../content/${categoryName}/${word}/${word}.jpg'>
+            <img src='../../../content/${categoryName}/${wordForPath}/${wordForPath}.jpg'>
             <div class='test-guesses'>
                 <label class='radio-label'>
                     <input type='radio' name='guess' value='${shuffledGuesses[0]}'>
