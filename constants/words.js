@@ -10,6 +10,6 @@ export const words = {
     vegetables: ['tomate', 'patata', 'cebolla',
         'zanahoria', 'pimienta', 'col', 'pepino', 'ajo', 'calabaza', 'guisante'],
     foods: ['sopa', 'ensalada', 'tortita',
-        'pan', 'jugo', 'leche', 'huevo', 'mantequilla', 'papilla', 'helado'],
+        'pan', 'jugo', 'leche', 'huevo', 'mantequilla', 'galleta', 'helado'],
 
 };
