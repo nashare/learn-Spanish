@@ -1,6 +1,6 @@
 export async function getUserCategories(userId) {
     try {
-        let response = await fetch(`http://localhost:3000/users/${userId}`);
+        let response = await fetch(`https://fakeapi-server-847135678534.herokuapp.com/users/${userId}`);
         let user = await response.json();
         if (user.categories.length > 0) {
             user.categories.forEach(category => {

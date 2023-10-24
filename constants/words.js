@@ -8,5 +8,8 @@ export const words = {
     transports: ['avión', 'barco', 'bicicleta',
         'camión', 'carro', 'metro', 'motocicleta', 'taxi', 'tranvía', 'tren'],
     vegetables: ['tomate', 'patata', 'cebolla',
-        'zanahoria', 'pimienta', 'col', 'pepino', 'ajo', 'calabaza', 'guisante']
+        'zanahoria', 'pimienta', 'col', 'pepino', 'ajo', 'calabaza', 'guisante'],
+    foods: ['sopa', 'ensalada', 'tortita',
+        'pan', 'jugo', 'leche', 'huevo', 'mantequilla', 'papilla', 'helado'],
+
 };

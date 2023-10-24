@@ -1,5 +1,5 @@
 export async function getUserCall(email, password) {
-    const response = await fetch(`http://localhost:3000/users?email=${email}&password=${password}`, {
+    const response = await fetch(`https://fakeapi-server-847135678534.herokuapp.com/users/?email=${email}&password=${password}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
