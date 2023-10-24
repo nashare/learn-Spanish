@@ -8,6 +8,12 @@
         "colors"
       ],
       "id": 1
+    },
+    {
+      "email": "test1@test1.test",
+      "password": "test1@test1.test",
+      "categories": [],
+      "id": 2
     }
   ]
 }
