@@ -8,4 +8,4 @@ export const index =
             <img class='homepage-image' src='/content/home/home.jpg'>
         </div>
     </section>
-    <a href='./categories/categories.html'><button class="button-yellow margin-2">Start Learning</button></a>`
+    <a href='./categories/categories.html'><button class="button-yellow margin-1-4">Start Learning</button></a>`
