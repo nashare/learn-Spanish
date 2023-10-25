@@ -7,23 +7,16 @@ import { words } from '../../../constants/words.js';
 export function callbackForComplete(category) {
 
     let wrongAnswersArr = JSON.parse(sessionStorage.getItem(`${category}TestWrongAnsw`))
-    let completeHTML = '';
 
     if (wrongAnswersArr.length === 0) {
         const userId = sessionStorage.getItem('userID');
         checkAndUpdateUser(userId, category);
-        completeHTML = completeCorrect;
+        document.querySelector('.test-complete').innerHTML = completeCorrect;
     } else {
         const wrongAnswNum = 10 - wrongAnswersArr.length;
         const reviewSection = categoryCreate(category, wrongAnswersArr);
-        completeHTML = completeWrong(wrongAnswNum, reviewSection);
-    }
-
-    document.querySelector('.test-complete').innerHTML = completeHTML;
-
-    const practiceButton = document.querySelector('.complete-button-practice');
-    if (practiceButton) {
-        practiceButton.addEventListener('click', function () {
+        document.querySelector('.test-complete').innerHTML = completeWrong(wrongAnswNum, reviewSection);
+        document.querySelector('.complete-button-practice').addEventListener('click', function () {
             const shuffledArrayForPractice = chance.shuffle(words[category]);
             sessionStorage.setItem(category, JSON.stringify(shuffledArrayForPractice));
             sessionStorage.setItem(`${category}TestNum`, '1');
