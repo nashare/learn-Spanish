@@ -2,7 +2,7 @@ export const header =
     `<header>
         <nav class='header-nav'>
             <a href='/' class='header-link link '>
-                <li>LEARN SPANISH</li>
+                <li>HOME</li>
             </a>
             <ul class='header-links'>
             </ul>
