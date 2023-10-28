@@ -5,8 +5,8 @@ export function categoriesContent(category) {
                     <p id='text-${category}' class='categories-name'>${category.toUpperCase()}</p>
                 </a>
                 <div class='categories-links'>
-                    <a href='/categories/${category}/${category}.html' class='categories-link-bottom'>Study</a>
-                    <a href='/categories/${category}/test-1/test-1.html' class='categories-tests categories-link-bottom'' id=${category}>Practice</a>
+                    <a href='/categories/${category}/${category}.html' class='button-yellow categories-link-bottom'>Study</a>
+                    <a href='/categories/${category}/test-1/test-1.html' class='categories-tests button-yellow categories-link-bottom'' id=${category}>Tests</a>
                 </div>
             </li>`
 }

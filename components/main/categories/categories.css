@@ -37,6 +37,9 @@
     border-bottom: 0.2vmin solid rgb(90, 90, 90);
     border-radius: 0 0 3vmin 3vmin;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
 }
 
 .categories-tests {
@@ -44,15 +47,10 @@
 }
 
 .categories-link-bottom {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    margin: 1vmin;
     font-weight: 500;
-    padding: 2vmin;
+    padding: 1vmin;
     font-weight: bold;
-    color: #ff8104;
     text-decoration: none;
     list-style-type: none;
 }
