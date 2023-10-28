@@ -7,36 +7,27 @@ import { soundAndImagesResult } from '../../../components/main/test/result/sound
 import { imageAndTextsResult } from '../../../components/main/test/result/imageAndTextsResult.js';
 import { imageAndInputResult } from '../../../components/main/test/result/imageAndInputResult.js';
 
-function excludeByIndex(arr, index) {
-    return arr.slice(0, index).concat(arr.slice(index + 1));
-}
-
-function createGuessesArr(arr, ind) {
-    const arrayWithoutTestWord = excludeByIndex(arr, ind);
-    return chance.shuffle(arrayWithoutTestWord).slice(0, 3);
-}
-
-function wordAndImages(categoryName, word, shuffledGuesses) {
+export function wordAndImages(categoryName, word, shuffledGuesses) {
     sessionStorage.setItem(`${categoryName}TestForResult`, wordAndImagesResult(word, shuffledGuesses, categoryName));
     return wordAndImagesTest(word, shuffledGuesses, categoryName);
 }
 
-function soundAndImages(categoryName, word, shuffledGuesses) {
+export function soundAndImages(categoryName, word, shuffledGuesses) {
     sessionStorage.setItem(`${categoryName}TestForResult`, soundAndImagesResult(word, categoryName, shuffledGuesses));
     return soundAndImagesTest(word, categoryName, shuffledGuesses);
 }
 
-function imageAndTexts(categoryName, word, shuffledGuesses) {
+export function imageAndTexts(categoryName, word, shuffledGuesses) {
     sessionStorage.setItem(`${categoryName}TestForResult`, imageAndTextsResult(categoryName, word, shuffledGuesses));
     return imageAndTextsTest(categoryName, word, shuffledGuesses);
 }
 
-function imageAndInput(categoryName, word) {
+export function imageAndInput(categoryName, word) {
     sessionStorage.setItem(`${categoryName}TestForResult`, imageAndInputResult(categoryName, word));
     return imageAndInputTest(categoryName, word);
 }
 
-function createTestHTML(category, word, arrayForGuesses) {
+export function createTestHTML(category, word, arrayForGuesses) {
     const testType = chance.integer({ min: 1, max: 4 });
     const shuffledGuesses = chance.shuffle([...arrayForGuesses, word]);
     switch (testType) {
@@ -56,8 +47,3 @@ function createTestHTML(category, word, arrayForGuesses) {
             break;
     }
 }
-
-export {
-    createGuessesArr,
-    createTestHTML
-};

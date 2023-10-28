@@ -1,6 +1,15 @@
-import { createGuessesArr, createTestHTML } from './testCreate.js'
 import { textNumber } from '../../../components/main/test/test/testNumber.js';
 import { playSound } from '../../playSound.js';
+import { createTestHTML } from './testCreate.js';
+
+export function excludeByIndex(arr, index) {
+    return arr.slice(0, index).concat(arr.slice(index + 1));
+}
+
+export function createGuessesArr(arr, ind) {
+    const arrayWithoutTestWord = excludeByIndex(arr, ind);
+    return chance.shuffle(arrayWithoutTestWord).slice(0, 3);
+}
 
 export function callbackForTest(category) {
 

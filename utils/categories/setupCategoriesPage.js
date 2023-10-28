@@ -22,5 +22,17 @@ export function setupCategoriesPage() {
 
     document.addEventListener('DOMContentLoaded', getUserCategories(userId));
 
+    const categoryTestElements = document.querySelectorAll('.categories-tests');
+
+    categoryTestElements.forEach(element => {
+        element.addEventListener('click', function (event) {
+            const categoryName = event.target.id;
+            const arrForSessionStorage = chance.shuffle(words[categoryName]);
+            sessionStorage.setItem(categoryName, JSON.stringify(arrForSessionStorage));
+            sessionStorage.setItem(`${categoryName}TestNum`, '1');
+            sessionStorage.setItem(`${categoryName}TestWrongAnsw`, JSON.stringify([]));
+        });
+    });
+
     logOut();
 }
