@@ -33,7 +33,7 @@ describe('createTestHTML', () => {
         chance.shuffle.mockReturnValue(['uva', 'banana', 'manzana', 'cereza']);
 
         const result = createTestHTML('fruits', 'manzana', ['uva', 'banana', 'manzana', 'cereza']);
-        expect(result).toEqual(wordAndImages('fruits', 'manzana', ['uva', 'banana', 'manzana', 'cereza']));
+        expect(result).toStrictEqual(wordAndImages('fruits', 'manzana', ['uva', 'banana', 'manzana', 'cereza']));
     });
 
     it('should return sound and images test', () => {
@@ -41,14 +41,14 @@ describe('createTestHTML', () => {
         chance.shuffle.mockReturnValue(['vaca', 'cerdo', 'gallina', 'gato']);
 
         const result = createTestHTML('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']);
-        expect(result).toEqual(soundAndImages('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']));
+        expect(result).toStrictEqual(soundAndImages('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']));
     });
 
     it('should return image and texts test', () => {
         chance.integer.mockReturnValue(3);
         chance.shuffle.mockReturnValue(['vaca', 'cerdo', 'gallina', 'gato']);
         const result = createTestHTML('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']);
-        expect(result).toEqual(imageAndTexts('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']));
+        expect(result).toStrictEqual(imageAndTexts('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']));
     });
 
     it('should return image and input test', () => {

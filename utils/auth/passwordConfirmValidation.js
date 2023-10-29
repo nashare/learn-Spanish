@@ -1,9 +1,18 @@
-export function passwordConfirmValidation(password, passwordConfirm) {
-    if (password !== passwordConfirm) {
-        document.getElementById('passwordConfirmError').style.display = 'block';
-        return false;
+export function doPasswordsMatch(password, passwordConfirm) {
+    return password === passwordConfirm;
+}
+
+function displayPasswordMismatchError(isMatched) {
+    const errorElement = document.getElementById('passwordConfirmError');
+    if (isMatched) {
+        errorElement.style.display = 'none';
     } else {
-        document.getElementById('passwordConfirmError').style.display = 'none';
-        return true;
+        errorElement.style.display = 'block';
     }
+}
+
+export function passwordConfirmValidation(password, passwordConfirm) {
+    const isMatched = doPasswordsMatch(password, passwordConfirm);
+    displayPasswordMismatchError(isMatched);
+    return isMatched;
 }

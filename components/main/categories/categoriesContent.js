@@ -1,7 +1,7 @@
 export function categoriesContent(category) {
-    return `<li class='category'>
+    return `<li class='category' id='content-${category}'>
                 <a href='/categories/${category}/${category}.html' class='link categories-link'>
-                    <img src='/content/${category}/${category}.jpg' class='border-buttom-straight' id='image-${category}'>
+                    <img src='/content/${category}/${category}.jpg' class='border-buttom-straight'>
                     <p id='text-${category}' class='categories-name'>${category.toUpperCase()}</p>
                 </a>
                 <div class='categories-links'>

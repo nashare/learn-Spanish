@@ -11,6 +11,10 @@ export function createGuessesArr(arr, ind) {
     return chance.shuffle(arrayWithoutTestWord).slice(0, 3);
 }
 
+export function handleTextInput(inputValue) {
+    return !inputValue.trim();
+}
+
 export function callbackForTest(category) {
 
     const wordsForTest = JSON.parse(sessionStorage.getItem(category));
@@ -33,14 +37,10 @@ export function callbackForTest(category) {
     }
 
     if (inputField) {
-        inputField.addEventListener('input', function () {
-            if (this.value.trim() !== '') {
-                checkButton.disabled = false;
-            } else {
-                checkButton.disabled = true;
-            }
+        inputField.addEventListener('input', function (event) {
+            checkButton.disabled = handleTextInput(event.target.value);
         });
-    };
+    }
 
     checkButton.addEventListener('click', function () {
         const selectedRadio = document.querySelector('input[type="radio"]:checked');

@@ -1,9 +1,18 @@
-export function passwordValidation(password) {
-    if (password.length < 8) {
-        document.getElementById('passwordError').style.display = 'block';
-        return false;
+export function isValidPassword(password) {
+    return password.length >= 8;
+}
+
+function displayPasswordLengthError(isValid) {
+    const errorElement = document.getElementById('passwordError');
+    if (isValid) {
+        errorElement.style.display = 'none';
     } else {
-        document.getElementById('passwordError').style.display = 'none';
-        return true
+        errorElement.style.display = 'block';
     }
+}
+
+export function passwordValidation(password) {
+    const isValid = isValidPassword(password);
+    displayPasswordLengthError(isValid);
+    return isValid;
 }

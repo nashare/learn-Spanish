@@ -15,9 +15,8 @@ export function setupLogInPage() {
     document.querySelector('footer').innerHTML = footer;
     document.querySelector('main').innerHTML = logInContainer;
     document.querySelector('.auth-container').innerHTML += authForm;
-    document.querySelector('.authForm').innerHTML += formEmail;
-    document.querySelector('.authForm').innerHTML += formPassword;
-    document.querySelector('.authForm').innerHTML += formButton;
+    const formContent = formEmail + formPassword + formButton;
+    document.querySelector('.authForm').innerHTML = formContent;
 
     loggedInCheckForAuth();
 

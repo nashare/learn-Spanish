@@ -15,10 +15,8 @@ export function setupSignUpPage() {
     document.querySelector('footer').innerHTML = footer;
     document.querySelector('main').innerHTML = signUpContainer;
     document.querySelector('.auth-container').innerHTML += authForm;
-    document.querySelector('.authForm').innerHTML += formEmail;
-    document.querySelector('.authForm').innerHTML += formPassword;
-    document.querySelector('.authForm').innerHTML += formPasswordConfirm;
-    document.querySelector('.authForm').innerHTML += formButton;
+    const formContent = formEmail + formPassword + formPasswordConfirm + formButton;
+    document.querySelector('.authForm').innerHTML = formContent;
 
     loggedInCheckForAuth();
 

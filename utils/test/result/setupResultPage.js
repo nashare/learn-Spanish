@@ -6,6 +6,23 @@ import { loggedInTrueHeaderLinks } from '../../../components/header/headerLinks/
 import { resultContainer } from '../../../components/main/test/result/resultContainer.js';
 import { logOut } from '../../auth/logOut.js';
 
+export function getNextURL(category, testNum) {
+    if (testNum === 11) {
+        return `/categories/${category}/test/complete.html`;
+    } else {
+        return `/categories/${category}/test-${testNum}/test-${testNum}.html`;
+    }
+}
+
+function navigateToNextTest(category, testNum) {
+    const nextURL = getNextURL(category, testNum);
+    if (testNum !== 11) {
+        sessionStorage.setItem(`${category}TestNum`, testNum);
+    }
+
+    window.location.href = nextURL;
+}
+
 export function setupResultPage(category) {
 
     loggedInCheck();
@@ -20,12 +37,7 @@ export function setupResultPage(category) {
     document.querySelector('.test-result-button').addEventListener('click', function () {
         let testNum = parseInt(sessionStorage.getItem(`${category}TestNum`));
         testNum++;
-        if (testNum === 11) {
-            window.location.href = `/categories/${category}/test/complete.html`;
-        } else {
-            sessionStorage.setItem(`${category}TestNum`, testNum);
-            window.location.href = `/categories/${category}/test-${testNum}/test-${testNum}.html`;
-        }
+        navigateToNextTest(category, testNum);
     });
 
     logOut();

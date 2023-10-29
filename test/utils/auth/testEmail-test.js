@@ -1,4 +1,4 @@
-import { testEmail } from "../../../utils/auth/testEmail.js";
+import { testEmail } from "../../../utils/auth/emailValidation.js";
 
 describe('normalizeString', () => {
     it('should not accept special symbols', () => {

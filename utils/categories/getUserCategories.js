@@ -6,8 +6,8 @@ export async function getUserCategories(userId) {
             user.categories.forEach(category => {
                 let categoryNameElement = document.getElementById(`text-${category}`);
                 categoryNameElement.innerHTML += ' &#10003;';
-                let categoryImageElement = document.getElementById(`image-${category}`);
-                categoryImageElement.classList.add('category-image-filter');
+                let categoryImageElement = document.getElementById(`content-${category}`);
+                categoryImageElement.classList.add('category-filter');
             })
         }
     } catch (error) {
