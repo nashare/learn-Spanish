@@ -7,7 +7,7 @@ export async function getUserCategories(userId) {
                 let categoryNameElement = document.getElementById(`text-${category}`);
                 categoryNameElement.innerHTML += ' &#10003;';
                 let categoryImageElement = document.getElementById(`content-${category}`);
-                categoryImageElement.classList.add('category-filter');
+                categoryImageElement.classList.add('categories-filter');
             })
         }
     } catch (error) {
