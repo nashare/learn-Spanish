@@ -1,24 +1,15 @@
 import { checkAnswer } from "../../../../utils/test/result/callbackForResult.js";
 
 describe('checkAnswer', () => {
-    it('should return true for two equal words', () => {
-        const output = checkAnswer('purpura', 'purpura');
-        expect(output).toStrictEqual(true);
-    });
+    const testCases = [
+        { input1: 'purpura', input2: 'purpura', expected: true, description: 'two equal words' },
+        { input1: 'üñéáíóú', input2: 'uneaiou', expected: true, description: 'characters with diacritics' },
+        { input1: 'PURPURA', input2: 'purpura', expected: true, description: 'two equal words with different case' },
+        { input1: 'POLLO', input2: 'gato', expected: false, description: 'different words' },
+    ];
 
-    it('should return true for characters with diacritics', () => {
-        const output = checkAnswer('üñéáíóú', 'uneaiou');
-        expect(output).toStrictEqual(true);
-    });
-
-    it('should return true for two equal words with different case', () => {
-        const output = checkAnswer('PURPURA', 'purpura');
-        expect(output).toStrictEqual(true);
-    });
-
-
-    it('should return false for different words', () => {
-        const output = checkAnswer('POLLO', 'gato');
-        expect(output).toStrictEqual(false);
+    test.each(testCases)('should return $expected for $description', ({ input1, input2, expected }) => {
+        const output = checkAnswer(input1, input2);
+        expect(output).toStrictEqual(expected);
     });
 });

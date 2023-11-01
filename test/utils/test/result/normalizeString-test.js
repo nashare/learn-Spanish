@@ -1,28 +1,15 @@
 import { normalizeString } from "../../../../utils/test/result/normalizeString.js";
 
 describe('normalizeString', () => {
-    it('should remove diacritics from a string', () => {
-        const input = 'púrpura';
-        const output = normalizeString(input);
-        expect(output).toStrictEqual('purpura');
-    });
+    const testCases = [
+        { input: 'púrpura', expected: 'purpura', description: 'remove diacritics from a string' },
+        { input: 'üñéáíóú', expected: 'uneaiou', description: 'remove all types of diacritics' },
+        { input: 'Marrón', expected: 'marron', description: 'remove diacritics and convert to lowercase' },
+        { input: 'POLLO', expected: 'pollo', description: 'convert to lowercase' },
+    ];
 
-    it('should remove all type of diacritics', () => {
-        const input = 'üñéáíóú';
+    test.each(testCases)('should $description', ({ input, expected }) => {
         const output = normalizeString(input);
-        expect(output).toStrictEqual('uneaiou');
-    });
-
-    it('should remove diacritics from a string and convert to lowercase', () => {
-        const input = 'Marrón';
-        const output = normalizeString(input);
-        expect(output).toStrictEqual('marron');
-    });
-
-
-    it('should convert to lowecase', () => {
-        const input = 'POLLO';
-        const output = normalizeString(input);
-        expect(output).toStrictEqual('pollo');
+        expect(output).toStrictEqual(expected);
     });
 });

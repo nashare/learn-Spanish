@@ -1,8 +1,4 @@
-import { createTestHTML } from "../../../../utils/test/test/testCreate.js";
-import { wordAndImages } from "../../../../utils/test/test/testCreate.js";
-import { soundAndImages } from "../../../../utils/test/test/testCreate.js";
-import { imageAndTexts } from "../../../../utils/test/test/testCreate.js";
-import { imageAndInput } from "../../../../utils/test/test/testCreate.js";
+import { createTestHTML, wordAndImages, soundAndImages, imageAndTexts, imageAndInput } from "../../../../utils/test/test/testCreate.js";
 
 beforeAll(() => {
     global.chance = {
@@ -25,36 +21,50 @@ afterAll(() => {
     delete global.sessionStorage;
 });
 
-
-
 describe('createTestHTML', () => {
-    it('should return word and images test', () => {
-        chance.integer.mockReturnValue(1);
-        chance.shuffle.mockReturnValue(['uva', 'banana', 'manzana', 'cereza']);
+    const testCases = [
+        {
+            mockValue: 1,
+            shuffledValues: ['uva', 'banana', 'manzana', 'cereza'],
+            category: 'fruits',
+            name: 'manzana',
+            expected: wordAndImages('fruits', 'manzana', ['uva', 'banana', 'manzana', 'cereza']),
+            description: 'should return word and images test'
+        },
+        {
+            mockValue: 2,
+            shuffledValues: ['vaca', 'cerdo', 'gallina', 'gato'],
+            category: 'animals',
+            name: 'gato',
+            expected: soundAndImages('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']),
+            description: 'should return sound and images test'
+        },
+        {
+            mockValue: 3,
+            shuffledValues: ['vaca', 'cerdo', 'gallina', 'gato'],
+            category: 'animals',
+            name: 'gato',
+            expected: imageAndTexts('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']),
+            description: 'should return image and texts test'
+        },
+        {
+            mockValue: 4,
+            shuffledValues: ['vaca', 'cerdo', 'gallina', 'gato'],
+            category: 'animals',
+            name: 'gato',
+            expected: imageAndInput('animals', 'gato'),
+            description: 'should return image and input test'
+        },
+    ];
 
-        const result = createTestHTML('fruits', 'manzana', ['uva', 'banana', 'manzana', 'cereza']);
-        expect(result).toStrictEqual(wordAndImages('fruits', 'manzana', ['uva', 'banana', 'manzana', 'cereza']));
-    });
+    testCases.forEach(({ mockValue, shuffledValues, category, name, expected, description }) => {
+        it(description, () => {
+            chance.integer.mockReturnValue(mockValue);
+            chance.shuffle.mockReturnValue(shuffledValues);
 
-    it('should return sound and images test', () => {
-        chance.integer.mockReturnValue(2);
-        chance.shuffle.mockReturnValue(['vaca', 'cerdo', 'gallina', 'gato']);
-
-        const result = createTestHTML('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']);
-        expect(result).toStrictEqual(soundAndImages('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']));
-    });
-
-    it('should return image and texts test', () => {
-        chance.integer.mockReturnValue(3);
-        chance.shuffle.mockReturnValue(['vaca', 'cerdo', 'gallina', 'gato']);
-        const result = createTestHTML('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']);
-        expect(result).toStrictEqual(imageAndTexts('animals', 'gato', ['vaca', 'cerdo', 'gallina', 'gato']));
-    });
-
-    it('should return image and input test', () => {
-        chance.integer.mockReturnValue(4);
-        const result = createTestHTML('animals', 'gato', ['vaca', 'cerdo', 'gallina',]);
-        expect(result).toEqual(imageAndInput('animals', 'gato'));
+            const result = createTestHTML(category, name, shuffledValues);
+            expect(result).toStrictEqual(expected);
+        });
     });
 
     it('should handle unexpected test type', () => {
