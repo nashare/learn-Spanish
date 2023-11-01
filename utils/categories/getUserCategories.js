@@ -1,7 +1,8 @@
+import { getUserById } from "../getUserById.js";
+
 export async function getUserCategories(userId) {
     try {
-        let response = await fetch(`https://fakeapi-server-847135678534.herokuapp.com/users/${userId}`);
-        let user = await response.json();
+        let user = await getUserById(userId);
         if (user.categories.length > 0) {
             user.categories.forEach(category => {
                 let categoryNameElement = document.getElementById(`text-${category}`);

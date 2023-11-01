@@ -26,7 +26,7 @@ export function setupCategoryPage(categoryName) {
 
     playSound('.category-container');
 
-    document.querySelector('.category-practice').addEventListener('click', function (event) {
+    document.querySelector('.category-practice').addEventListener('click', function () {
         const arrForSessionStorage = chance.shuffle(words[categoryName]);
         sessionStorage.setItem(categoryName, JSON.stringify(arrForSessionStorage));
         sessionStorage.setItem(`${categoryName}TestNum`, '1');
