@@ -5,8 +5,10 @@ Welcome to the repository for "Learn Spanish Visually"! Our platform provides an
 ## Getting Started
 
 1. Visit [Learn Spanish Visually](https://learn-spanish-visual.vercel.app).
-2. Register for a new account or log in. For test purpose you can use new@new.new
-both as email and password to log in. 
+2. Register for a new account or log in. Please register for a new account or log in. For testing purposes, you may use the following credentials:
+* email: test@test.com
+* password: qweasdzxcQ1!
+
 3. Dive into your first lesson!
 
 ![Website Screenshot](/content/screenshots/home.png)

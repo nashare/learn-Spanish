@@ -1,3 +1,8 @@
+// type Words = {
+//     [key: string]: string[];
+// }
+
+
 export const words = {
     fruits: ['manzana', 'albaricoque', 'banana',
         'cereza', 'uva', 'fresa', 'naranja', 'limón', 'durazno', 'pera'],
