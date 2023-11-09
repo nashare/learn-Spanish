@@ -1,9 +1,5 @@
 import { getUserById } from "../../getUserById.js";
 
-export async function putUser(user, userId) {
-                 
-}
-
 export async function checkAndUpdateUser(userId, categoryToAdd) {
     try {
         let user = await getUserById(userId)
